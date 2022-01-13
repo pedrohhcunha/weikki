@@ -11,6 +11,7 @@ Exemplo de body no request:
   "telefone":"(49) 99999-9999",
   "cnpj":"00.000.000/0000-00",
   "produto_interesse":["Camisa", "Capacete", ...],
+  "quantidade_funcionarios": "10-50"
 }
 */
 
@@ -24,6 +25,7 @@ export default function handler(req, res) {
     let telefone = req.body.telefone
     let cnpj = req.body.cnpj
     let produto_interesse = req.body.produto_interesse
+    let quantidadeFuncionarios = req.body.quantidade_funcionarios
     let tag = "formulario-de-qualificacao-weikki"
 
     axios.post(process.env.RD_API_URL + '/auth/token',{  
@@ -56,7 +58,8 @@ export default function handler(req, res) {
           "company_address": endereco,
           "personal_phone": telefone,
           "cf_cnpj_cpf": cnpj,
-          //"cf_produtos_de_interesse": produto_interesse,  //NO AGUARDO DO MESTRE
+          "cf_produto_de_interesse_weikki": produto_interesse, 
+          "cf_quantidade_de_funcionarios": quantidadeFuncionarios,
           "tags": ["weikki", "2022"],
           "available_for_mailing": true
         }
