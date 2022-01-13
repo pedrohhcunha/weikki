@@ -6,6 +6,7 @@ import Solucoes from '../components/Solucoes/componente.jsx'
 import Diferenciais from '../components/Diferenciais/componente.jsx'
 import Clientes from '../components/Clientes/componente.jsx'
 import Final from '../components/Final/componente.jsx'
+import Footer from '../components/Footer/componente.jsx'
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <Diferenciais />
         <Clientes />
         <Final />
+        <Footer />
       </main>
     </>
   )
