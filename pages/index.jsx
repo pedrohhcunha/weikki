@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Header from '../components/Header/componente'
+import Header from '../components/Header/componente.jsx'
 export default function Home() {
   return (
     <>
