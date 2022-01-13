@@ -4,6 +4,7 @@ import Inicio from '../components/Inicio/componente.jsx'
 import Sobre from '../components/Sobre/componente.jsx'
 import Solucoes from '../components/Solucoes/componente.jsx'
 import Diferenciais from '../components/Diferenciais/componente.jsx'
+import Clientes from '../components/Clientes/componente.jsx'
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <Sobre />
         <Solucoes />
         <Diferenciais />
+        <Clientes />
       </main>
     </>
   )
