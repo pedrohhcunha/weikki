@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from '../components/Header/componente.jsx'
 import Inicio from '../components/Inicio/componente.jsx'
+import Sobre from '../components/Sobre/componente.jsx'
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <main>
         <Header />
         <Inicio />
+        <Sobre />
       </main>
     </>
   )
