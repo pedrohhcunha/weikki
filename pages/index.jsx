@@ -5,6 +5,7 @@ import Sobre from '../components/Sobre/componente.jsx'
 import Solucoes from '../components/Solucoes/componente.jsx'
 import Diferenciais from '../components/Diferenciais/componente.jsx'
 import Clientes from '../components/Clientes/componente.jsx'
+import Final from '../components/Final/componente.jsx'
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <Solucoes />
         <Diferenciais />
         <Clientes />
+        <Final />
       </main>
     </>
   )
