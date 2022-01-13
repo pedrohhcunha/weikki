@@ -1,5 +1,7 @@
+import styles from './styles.module.scss'
+
 export default function Button(props) {
     return (
-        <button>{props.children}</button>
+        <button className={styles.button}>{props.children}</button>
     )
 }
