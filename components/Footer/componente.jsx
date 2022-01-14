@@ -2,6 +2,7 @@ import { faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-sv
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from './styles.module.scss'
+import Link from 'next/link'
 
 export default function Footer (props){
     return(
@@ -30,15 +31,21 @@ export default function Footer (props){
                     </div>
                 </div>
                 <div className={styles.areaRedes}>
-                    <div className={styles.rede}>
-                        <FontAwesomeIcon className={styles.icon} icon={faFacebook} />
-                    </div>
-                    <div className={styles.rede}>
-                        <FontAwesomeIcon className={styles.icon} icon={faInstagram} />
-                    </div>
-                    <div className={styles.rede}>
-                        <FontAwesomeIcon className={styles.icon} icon={faLinkedin} />
-                    </div>
+                    <Link href="https://facebook.com/weikki" target="__blank">
+                        <a className={styles.rede}>
+                            <FontAwesomeIcon className={styles.icon} icon={faFacebook} />
+                        </a>
+                    </Link>
+                    <Link href="https://instagram.com/weikki" target="__blank">
+                        <a className={styles.rede}>
+                            <FontAwesomeIcon className={styles.icon} icon={faInstagram} />
+                        </a>
+                    </Link>
+                    <Link  href="https://linkedin.com/weikki" target="__blank">
+                        <a className={styles.rede}>
+                            <FontAwesomeIcon className={styles.icon} icon={faLinkedin} />
+                        </a>
+                    </Link>
                 </div>
             </div>
             <div className={styles.direitosArea}>
