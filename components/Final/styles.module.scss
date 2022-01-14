@@ -1,0 +1,30 @@
+.section{
+    width: 100%;
+    padding: 100px 6%;
+    background: linear-gradient(to right, #065345, var(--blue));
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .areaLogo{
+        width: 40%;
+    }
+
+    .areaContent{
+        width: 40%;
+
+        h2{
+            font-size: 80px;
+            color: var(--white);
+        }
+        p{
+            color: var(--white);
+            font-size: 22px;
+            margin-bottom: 20px;
+
+            strong{
+                color: var(--lightGreen);
+            }
+        }
+    }
+}

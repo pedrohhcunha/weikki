@@ -15,4 +15,9 @@
         font-size: 30px;
         border-radius: 0 32.5px 0 32.5px;
     }
+
+    &.white{
+        color: var(--blue);
+        background-color: var(--white);
+    }
 }
