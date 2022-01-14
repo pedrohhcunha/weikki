@@ -51,6 +51,15 @@
                 border-radius: 50%;
                 background-color: var(--blue);
                 margin-left: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .icon{
+                    width: 20px;
+                    color: var(--white);
+                    cursor: pointer;
+                }
             }
         }
     }
