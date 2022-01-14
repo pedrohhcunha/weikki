@@ -13,13 +13,13 @@ export default function Header(props){
             <div className={styles.rightArea}>
                 <nav className={styles.nav}>
                     <ul className={styles.ul}>
-                        <li className={styles.item}><Link href=""><a>A weikki</a></Link></li>
-                        <li className={styles.item}><Link href=""><a>Soluções</a></Link></li>
-                        <li className={styles.item}><Link href=""><a>Diferenciais</a></Link></li>
+                        <li className={styles.item}><Link href="#a-weikki"><a>A weikki</a></Link></li>
+                        <li className={styles.item}><Link href="#solucoes"><a>Soluções</a></Link></li>
+                        <li className={styles.item}><Link href="#diferenciais"><a>Diferenciais</a></Link></li>
                     </ul>
                 </nav>
                 <div className={styles.buttons}>
-                    <Link href="">
+                    <Link href="tel:4933222593">
                         <a className={styles.linkTelefone}>
                             <FontAwesomeIcon className={styles.icon} icon={faPhone} />
                             <span className={styles.phoneNumber}>49 3322.2593</span>

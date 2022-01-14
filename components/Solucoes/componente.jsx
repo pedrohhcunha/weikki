@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 
 export default function Solucoes (props){
     return(
-        <section className={styles.section}>
+        <section id="solucoes" className={styles.section}>
             <h2>Nossas Soluções</h2>
             <h3>Nossos uniformes e EPI's são ideais para as necessidades da sua empresa.</h3>
             <div className={styles.areaCards}>

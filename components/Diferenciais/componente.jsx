@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 
 export default function Diferenciais(props){
     return(
-        <section className={styles.section}>
+        <section id="diferenciais" className={styles.section}>
             <h2>Nossos Diferenciais</h2>
             <h3>Conheça alguns dos nossos diferenciais.</h3>
             <div className={styles.cardsArea}>
