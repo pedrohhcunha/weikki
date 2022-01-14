@@ -19,7 +19,7 @@
 
     .areaCards{
         display: flex;
-        align-items: center;
+        align-items: stretch;
         justify-content: space-between;
         background-color: var(--white);
         width: 100%;
@@ -75,6 +75,7 @@
                 color: var(--blue);
                 margin-top: 20px;
                 margin-bottom: 20px;
+                min-height:  120px;
             }
 
             .areaButton{

@@ -36,14 +36,14 @@ export default function Solucoes (props){
                         <div className={styles.areaIcon}>
                             <FontAwesomeIcon className={styles.icon} icon={faAvianex} />
                         </div>
-                        <h4>Uniformes profissionais</h4>
+                        <h4>Uniformes executivos</h4>
                     </div>
                     <div className={styles.areaImagem}>
                         <Image objectFit="cover" src={card2} layout="fill" />
                     </div>
                     <p>
-                    Produtos indispensáveis para os setores industrial, alimentício, de saúde e construção civil. <br /> 
-                    <strong>Produtos:</strong> calça, camisa, polo, jalecos, coletes, macacões e muito mais.
+                    Produtos que seguem <strong>tendências em design, segurança e bem-estar.</strong> Ideal para os setores de negócios e de atendimento ao público. <br />
+                    <strong>Produtos:</strong> polo, camiseta, camisa, calça social e outros.
                     </p>
                     <div className={styles.areaButton}>
                         <Button>Comprar agora</Button>
@@ -54,14 +54,15 @@ export default function Solucoes (props){
                         <div className={styles.areaIcon}>
                             <FontAwesomeIcon className={styles.icon} icon={faAvianex} />
                         </div>
-                        <h4>Uniformes profissionais</h4>
+                        <h4>Equipamentos de proteção individual</h4>
                     </div>
                     <div className={styles.areaImagem}>
                         <Image objectFit="cover" src={card3} layout="fill" />
                     </div>
                     <p>
-                    Produtos indispensáveis para os setores industrial, alimentício, de saúde e construção civil. <br /> 
-                    <strong>Produtos:</strong> calça, camisa, polo, jalecos, coletes, macacões e muito mais.
+                    Oferecemos <strong>Equipamento de Proteção Individual de alta qualidade</strong> para proporcionar a melhor usabilidade com o máximo conforto e proteção. <br />
+                    <strong>Produtos:</strong> capacetes, cremes para as mãos, cintos de segurança, abafadores, óculos, calçados de segurança, EPI´s em geral voltados a trabalhos com altura, dentre outros.
+
                     </p>
                     <div className={styles.areaButton}>
                         <Button>Comprar agora</Button>
