@@ -1,0 +1,62 @@
+.footer{
+    width: 100%;
+    padding: 50px 6%;
+    background-color: var(--white);
+
+    .contentArea{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 50px;
+
+        .areaLogo{
+            width: 200px;
+            height: 100px;
+            background-color: var(--blue);
+        }
+
+        .areaInfos{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .info{
+                margin: 0 20px;
+                color: var(--blue);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .icon{
+                    width: 20px;
+                    margin-right: 5px;
+                }
+
+                .align{
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start
+                }
+            }
+        }
+
+        .areaRedes{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            .rede{
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: var(--blue);
+                margin-left: 5px;
+            }
+        }
+    }
+
+    .direitosArea{
+        width: 100%;
+        text-align: center;
+    }
+}
