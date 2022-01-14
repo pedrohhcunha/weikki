@@ -1,0 +1,58 @@
+.section{
+    width: 100%;
+    padding: 100px 6%;
+    background-color: #cdd3e1;
+
+    h2{
+        color: var(--green);
+        font-weight: 700;
+        font-size: 55px;
+        text-align: center;
+    }
+
+    h3{
+        font-size: 30px;
+        color: var(--green);
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .cardsArea{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 60px;
+        margin-bottom: 70px;
+
+        .diferencial{
+            text-align: center;
+            width: 32%;
+            color: var(--blue);
+
+            .areaIcon{
+                width: 120px;
+                height: 120px;
+                background-color: var(--blue);
+                border-radius: 50%;
+                margin: 0 auto;
+                margin-bottom: 10px;
+            }
+
+            h4{
+                margin-bottom: -3px;
+            }
+
+            P{
+                font-weight: 500;
+            }
+        }
+    }
+
+    .areaButton{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
