@@ -1,15 +1,17 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import styles from './styles.module.scss'
-import logoPrincipal from './images/logo.png'
+import logo from './images/logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import Button from '../Button/componente.jsx'
+import Image from 'next/image'
 
 export default function Header(props){
     return(
         <header className={styles.header}>
-            <div className={styles.areaImagem}></div>
+            <div className={styles.areaImagem}>
+                <Image src={logo} layout="responsive" />
+            </div>
             <div className={styles.rightArea}>
                 <nav className={styles.nav}>
                     <ul className={styles.ul}>
