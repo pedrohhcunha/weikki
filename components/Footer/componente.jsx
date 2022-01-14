@@ -3,12 +3,16 @@ import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from './styles.module.scss'
 import Link from 'next/link'
+import logo from './images/logo.png'
+import Image from 'next/image'
 
 export default function Footer (props){
     return(
         <footer className={styles.footer}>
             <div className={styles.contentArea}>
-                <div className={styles.areaLogo}></div>
+                <div className={styles.areaLogo}>
+                    <Image src={logo} layout="responsive" />
+                </div>
                 <div className={styles.areaInfos}>
                     <div className={styles.info}>
                         <span>
