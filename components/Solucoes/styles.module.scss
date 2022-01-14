@@ -44,10 +44,19 @@
                     background-color: var(--blue);
                     border-radius: 50%;
                     border: 2px solid var(--white);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .icon{
+                        width: 50px;
+                        color: var(--white);
+                    }
                 }
 
                 h4{
-                    margin-bottom: 20px;
+                    margin-bottom: 30px;
+                    margin-left: 5px;
                     color: var(--blue);
                 }
             }

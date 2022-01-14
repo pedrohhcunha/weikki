@@ -1,5 +1,7 @@
 import Button from '../Button/componente.jsx'
 import styles from './styles.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAvianex } from '@fortawesome/free-brands-svg-icons';
 
 export default function Solucoes (props){
     return(
@@ -9,7 +11,9 @@ export default function Solucoes (props){
             <div className={styles.areaCards}>
                 <div className={styles.cardSolucao}>
                     <div className={styles.topArea}>
-                        <div className={styles.areaIcon}></div>
+                        <div className={styles.areaIcon}>
+                        <FontAwesomeIcon className={styles.icon} icon={faAvianex} />
+                        </div>
                         <h4>Uniformes profissionais</h4>
                     </div>
                     <div className={styles.areaImagem}>
@@ -25,7 +29,9 @@ export default function Solucoes (props){
                 </div>
                 <div className={styles.cardSolucao}>
                     <div className={styles.topArea}>
-                        <div className={styles.areaIcon}></div>
+                        <div className={styles.areaIcon}>
+                            <FontAwesomeIcon className={styles.icon} icon={faAvianex} />
+                        </div>
                         <h4>Uniformes profissionais</h4>
                     </div>
                     <div className={styles.areaImagem}>
@@ -41,7 +47,9 @@ export default function Solucoes (props){
                 </div>
                 <div className={styles.cardSolucao}>
                     <div className={styles.topArea}>
-                        <div className={styles.areaIcon}></div>
+                        <div className={styles.areaIcon}>
+                            <FontAwesomeIcon className={styles.icon} icon={faAvianex} />
+                        </div>
                         <h4>Uniformes profissionais</h4>
                     </div>
                     <div className={styles.areaImagem}>
