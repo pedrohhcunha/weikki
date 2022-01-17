@@ -21,7 +21,7 @@ export default function Solucoes (props){
                         <h4>Uniformes profissionais</h4>
                     </div>
                     <div className={styles.areaImagem}>
-                        <Image objectFit="cover" src={card1} layout="fill" />
+                        <Image priority objectFit="cover" src={card1} layout="fill" />
                     </div>
                     <p>
                     Produtos indispensáveis para os setores industrial, alimentício, de saúde e construção civil. <br /> 
@@ -39,7 +39,7 @@ export default function Solucoes (props){
                         <h4>Uniformes executivos</h4>
                     </div>
                     <div className={styles.areaImagem}>
-                        <Image objectFit="cover" src={card2} layout="fill" />
+                        <Image priority objectFit="cover" src={card2} layout="fill" />
                     </div>
                     <p>
                     Produtos que seguem <strong>tendências em design, segurança e bem-estar.</strong> Ideal para os setores de negócios e de atendimento ao público. <br />
@@ -57,7 +57,7 @@ export default function Solucoes (props){
                         <h4>Equipamentos de proteção individual</h4>
                     </div>
                     <div className={styles.areaImagem}>
-                        <Image objectFit="cover" src={card3} layout="fill" />
+                        <Image priority objectFit="cover" src={card3} layout="fill" />
                     </div>
                     <p>
                     Oferecemos <strong>Equipamento de Proteção Individual de alta qualidade</strong> para proporcionar a melhor usabilidade com o máximo conforto e proteção. <br />
