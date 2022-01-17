@@ -14,7 +14,7 @@ export default function Diferenciais(props){
                         <FontAwesomeIcon className={styles.icon} icon={faAvianex} />
                     </div>
                     <h4>Praticidade e Agilidade</h4>
-                    <p>Com uma equipe preparada para atender da melhor forma todos os tipos de setores, você garante praticidade e agilidade na hora de comprar Uniformes e EPI's.</p>
+                    <p>Com uma equipe preparada para atender da melhor forma todos os tipos de setores, você garante praticidade e agilidade na hora de comprar Uniformes e EPI&apos;s.</p>
                 </div>
                 <div className={styles.diferencial}>
                     <div className={styles.areaIcon}>
