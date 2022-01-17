@@ -3,9 +3,9 @@ import styles from './styles.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAvianex } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image'
-import card1 from './images/card1.jpeg'
-import card2 from './images/card2.jpeg'
-import card3 from './images/card3.jpeg'
+import card1 from './images/card1.jpg'
+import card2 from './images/card2.jpg'
+import card3 from './images/card3.jpg'
 
 export default function Solucoes (props){
     return(
