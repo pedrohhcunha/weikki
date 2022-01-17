@@ -3,9 +3,11 @@
 :root{
   --white: #ffffff;
   --gray: #cdd3e1;
+  --darkGray: #aaafbb;
   --green: #006532;
   --lightGreen: #00FD7D;
   --blue: #112f6e;
+  --blue25: #112f6e40;
 }
 
 *{
