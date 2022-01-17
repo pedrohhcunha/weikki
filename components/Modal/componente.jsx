@@ -36,13 +36,13 @@ export default function Modal(props) {
                         <div className={styles.areaInput}>
                             <label className={styles.label} htmlFor="quantidadeInput">Quantidade de funcionários*</label>
                             <select name="quantidadeInput" id="quantidadeInput" className={styles.input}>
-                                <option value="1">10-50</option>
-                                <option value="2">51-200</option>
-                                <option value="3">201-500</option>
-                                <option value="4">501-1000</option>
-                                <option value="5">1001-5000</option>
-                                <option value="6">5001-10000</option>
-                                <option value="7">10001+</option>
+                                <option value="10-50">10-50</option>
+                                <option value="51-200">51-200</option>
+                                <option value="201-500">201-500</option>
+                                <option value="501-1000">501-1000</option>
+                                <option value="1001-5000">1001-5000</option>
+                                <option value="5001-10000">5001-10000</option>
+                                <option value="10001+">10001+</option>
                             </select>
                         </div>
                     </div>
