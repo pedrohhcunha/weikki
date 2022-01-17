@@ -29,5 +29,14 @@
         position: relative;
         overflow: hidden;
         box-shadow: -4px 4px 10px #00000021;
+
+        .photo{
+            opacity: 0;
+            transition: 1s;
+
+            &.active{
+                opacity: 1;
+            }
+        }
     }
 }
