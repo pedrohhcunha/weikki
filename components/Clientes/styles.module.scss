@@ -21,7 +21,7 @@
         width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-gap: 20px;
+        grid-gap: 40px;
         margin-top: 20px;
         
         .cliente{
@@ -30,7 +30,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--gray);
+            filter: grayscale(100%);
+            object-fit: contain;
+            transition: .3s;
+            cursor: pointer;
+            
+            &:hover{
+                filter: grayscale(0);
+            }
         }
     }
 }
