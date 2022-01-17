@@ -14,21 +14,21 @@ export default function Diferenciais(props){
                         <FontAwesomeIcon className={styles.icon} icon={faAvianex} />
                     </div>
                     <h4>Praticidade e Agilidade</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptatum quas consequatur repellendus et quibusdam voluptate cupiditate. Ipsam minima labore deserunt iste quisquam accusantium, quam dolorem consequatur, quod, laborum mollitia.</p>
+                    <p>Com uma equipe preparada para atender da melhor forma todos os tipos de setores, você garante praticidade e agilidade na hora de comprar Uniformes e EPI's.</p>
                 </div>
                 <div className={styles.diferencial}>
                     <div className={styles.areaIcon}>
                         <FontAwesomeIcon className={styles.icon} icon={faAvianex} />
                     </div>
-                    <h4>Praticidade e Agilidade</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptatum quas consequatur repellendus et quibusdam voluptate cupiditate. Ipsam minima labore deserunt iste quisquam accusantium, quam dolorem consequatur, quod, laborum mollitia.</p>
+                    <h4>Alta durabilidade, Segurança e Conforto</h4>
+                    <p>Investimos em matérias-primas de alta qualidade, desenvolvendo produtos com design diferenciado e durabilidade que proporcionam conforto, praticidade e bem-estar.</p>
                 </div>
                 <div className={styles.diferencial}>
                     <div className={styles.areaIcon}>
                         <FontAwesomeIcon className={styles.icon} icon={faAvianex} />
                     </div>
-                    <h4>Praticidade e Agilidade</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptatum quas consequatur repellendus et quibusdam voluptate cupiditate. Ipsam minima labore deserunt iste quisquam accusantium, quam dolorem consequatur, quod, laborum mollitia.</p>
+                    <h4>Experiência e Inovação</h4>
+                    <p>Com mais de 26 anos de experiência, estamos sempre nos adaptando ao mercado e inovando com a necessidade do consumidor. Buscamos a melhor experiência para cada negócio.</p>
                 </div>
             </div>
             <div className={styles.areaButton}>
