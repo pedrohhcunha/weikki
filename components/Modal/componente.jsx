@@ -1,14 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import styles from './styles.module.scss'
-import Button from '../Button/componente.jsx'
 import { useState } from 'react'
 
 export default function Modal(props) {
     const [listInteresse, setListInteresse] = useState([false, true, false]);
     return(
-        <aside className={styles.aside}>
-            <div className={styles.closeModal}>
+        <aside className={`${styles.aside} ${props.isActive ? styles.active : ''}`}>
+            <div onClick={props.closeModal} className={styles.closeModal}>
                 <FontAwesomeIcon className={styles.icon} icon={faTimes} />
             </div>
             <div className={styles.areaModal}>

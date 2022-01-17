@@ -9,7 +9,10 @@ import Final from '../components/Final/componente.jsx'
 import Footer from '../components/Footer/componente.jsx'
 import Modal from '../components/Modal/componente.jsx'
 
+import { useState } from 'react'
+
 export default function Home() {
+  const [modalIsActive, setModalIsActive] = useState(true);
   return (
     <>
       <Head>
@@ -26,7 +29,7 @@ export default function Home() {
         <Final />
         <Footer />
 
-        <Modal/>
+        <Modal isActive={modalIsActive} closeModal={() => setModalIsActive(false)}/>
       </main>
     </>
   )
