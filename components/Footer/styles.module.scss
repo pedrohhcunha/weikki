@@ -69,4 +69,31 @@
         color: var(--blue);
         font-weight: 700;
     }
+
+    @media screen and (max-width: 1400px) {
+        .contentArea{
+            flex-wrap: wrap;
+    
+            .areaLogo{
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+    
+            .areaInfos{
+                flex-wrap: wrap;
+                margin: 40px auto;
+                width: 100%;
+    
+                .info{
+                    margin: 0 20px;
+                }
+            }
+    
+            .areaRedes{
+                justify-content: center;
+                width: 100%;
+            }
+        }
+    }
 }
