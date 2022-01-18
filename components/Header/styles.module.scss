@@ -150,4 +150,34 @@
             }
         }
     }
+    @media screen and (max-width: 1000px) {
+
+        .areaImagem{
+            width: 20vw;
+        }
+        
+        .rightArea{
+
+            .nav{
+                display: none;
+            }
+
+            .buttons{
+
+                .linkTelefone{
+                    margin-right: 10px;
+
+                    .icon{
+                        width: 14px;
+                        font-size: 14px;
+                        margin-right: 5px;
+                    }
+    
+                    .phoneNumber{
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
 }
