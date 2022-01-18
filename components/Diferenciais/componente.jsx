@@ -32,7 +32,7 @@ export default function Diferenciais(props){
                 </div>
             </div>
             <div className={styles.areaButton}>
-                <Button>Falar com especialista</Button>
+                <Button onClick={props.openModal}>Falar com especialista</Button>
             </div>
         </section>
     )

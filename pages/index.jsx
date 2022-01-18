@@ -30,13 +30,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Header />
-        <Inicio />
+        <Header openModal={() => setModalIsActive(true)} />
+        <Inicio openModal={() => setModalIsActive(true)} />
         <Sobre />
-        <Solucoes />
-        <Diferenciais />
+        <Solucoes openModal={() => setModalIsActive(true)} />
+        <Diferenciais openModal={() => setModalIsActive(true)} />
         <Clientes />
-        <Final />
+        <Final openModal={() => setModalIsActive(true)}/>
         <Footer />
 
         <Modal isActive={modalIsActive} closeModal={() => setModalIsActive(false)}/>

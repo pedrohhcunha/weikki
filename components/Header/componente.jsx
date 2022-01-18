@@ -28,7 +28,7 @@ export default function Header(props){
                         </a>
                     </Link>
                     <div className={styles.botao}>
-                        <Button large>Comprar agora</Button>
+                        <Button onClick={props.openModal} large>Comprar agora</Button>
                     </div>
                 </div>
             </div>

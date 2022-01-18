@@ -28,7 +28,7 @@ export default function Solucoes (props){
                     <strong>Produtos:</strong> calça, camisa, polo, jalecos, coletes, macacões e muito mais.
                     </p>
                     <div className={styles.areaButton}>
-                        <Button>Comprar agora</Button>
+                        <Button onClick={props.openModal}>Comprar agora</Button>
                     </div>
                 </div>
                 <div className={styles.cardSolucao}>
@@ -46,7 +46,7 @@ export default function Solucoes (props){
                     <strong>Produtos:</strong> polo, camiseta, camisa, calça social e outros.
                     </p>
                     <div className={styles.areaButton}>
-                        <Button>Comprar agora</Button>
+                        <Button onClick={props.openModal}>Comprar agora</Button>
                     </div>
                 </div>
                 <div className={styles.cardSolucao}>
@@ -65,7 +65,7 @@ export default function Solucoes (props){
 
                     </p>
                     <div className={styles.areaButton}>
-                        <Button>Comprar agora</Button>
+                        <Button onClick={props.openModal}>Comprar agora</Button>
                     </div>
                 </div>
             </div>
