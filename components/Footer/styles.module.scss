@@ -96,4 +96,17 @@
             }
         }
     }
+    @media screen and (max-width: 1000px) {
+        .contentArea{
+
+            .areaInfos{
+    
+                .info{
+                    width: 100%;
+                    margin: 10px 0;
+                    justify-content: flex-start;
+                }
+            }
+        }
+    }
 }
