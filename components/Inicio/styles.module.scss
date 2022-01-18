@@ -46,4 +46,10 @@
             line-height: 150%;
         }    
     }
+
+    @media screen and (max-width: 1300px) {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        background: linear-gradient(to right, #065345, var(--blue));
+    }
 }
