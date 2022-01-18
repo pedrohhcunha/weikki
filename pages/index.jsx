@@ -9,10 +9,20 @@ import Final from '../components/Final/componente.jsx'
 import Footer from '../components/Footer/componente.jsx'
 import Modal from '../components/Modal/componente.jsx'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
   const [modalIsActive, setModalIsActive] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener('keydown', event => {
+      if(event.key === "Escape") {
+        setModalIsActive(false)
+      }
+    })
+  }, []);
+
+
   return (
     <>
       <Head>
