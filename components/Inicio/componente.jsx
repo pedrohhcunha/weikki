@@ -10,7 +10,7 @@ export default function Inicio(props){
                 que proporcionam maior <strong className={styles.strongWhite}>conforto, durabilidade
                 e segurança</strong>, com a <strong>experiência de quem está há mais
                 de <strong>26 anos no mercado.</strong></strong></h1>
-            <Button large>Solicitar Orçamento</Button>
+            <Button large onClick={props.openModal}>Solicitar Orçamento</Button>
         </section>
     )
 }

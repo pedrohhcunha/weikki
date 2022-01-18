@@ -2,7 +2,7 @@ import Link from 'next/link'
 import styles from './styles.module.scss'
 import logo from './images/logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPhone } from '@fortawesome/free-solid-svg-icons'
+import { faPhoneAlt as faPhone } from '@fortawesome/free-solid-svg-icons'
 import Button from '../Button/componente.jsx'
 import Image from 'next/image'
 
@@ -29,7 +29,7 @@ export default function Header(props){
                         </a>
                     </Link>
                     <div className={styles.botao}>
-                        <Button large>Comprar agora</Button>
+                        <Button onClick={props.openModal} large>Comprar agora</Button>
                     </div>
                 </div>
             </div>

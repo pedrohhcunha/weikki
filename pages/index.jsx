@@ -9,10 +9,20 @@ import Final from '../components/Final/componente.jsx'
 import Footer from '../components/Footer/componente.jsx'
 import Modal from '../components/Modal/componente.jsx'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
   const [modalIsActive, setModalIsActive] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener('keydown', event => {
+      if(event.key === "Escape") {
+        setModalIsActive(false)
+      }
+    })
+  }, []);
+
+
   return (
     <>
       <Head>
@@ -20,13 +30,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Header />
-        <Inicio />
+        <Header openModal={() => setModalIsActive(true)} />
+        <Inicio openModal={() => setModalIsActive(true)} />
         <Sobre />
-        <Solucoes />
-        <Diferenciais />
+        <Solucoes openModal={() => setModalIsActive(true)} />
+        <Diferenciais openModal={() => setModalIsActive(true)} />
         <Clientes />
-        <Final />
+        <Final openModal={() => setModalIsActive(true)}/>
         <Footer />
 
         <Modal isActive={modalIsActive} closeModal={() => setModalIsActive(false)}/>
