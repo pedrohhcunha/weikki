@@ -4,37 +4,60 @@ import styles from './styles.module.scss'
 import { useState } from 'react'
 
 export default function Modal(props) {
-    const [listInteresse, setListInteresse] = useState([false, true, false]);
+    const [listInteresse, setListInteresse] = useState([false, false, false]);
+
+    const [dataForm, setDataForm] = useState({
+        nameInput: "",
+        emailInput: "",
+        occupationInput: "",
+        companyInput: "",
+        quantidadeInput: "",
+        addressInput: "",
+        phoneInput: "",
+        cnpjInput: ""
+    });
+
+    const handleInput = event => {
+        setDataForm({...dataForm, [event.target.name]: event.target.value})
+    }
+
+    const submitForm = event => {
+        event.preventDefault()
+        let products = ['Uniformes profissionais', 'Uniformes Executivos', "EPI's"]
+        dataForm.products = products.map((item, index) => listInteresse[index] ? item : null).filter(item => item!== null)
+        console.log("Enviando dados:", dataForm)
+    }
+
     return(
         <aside className={`${styles.aside} ${props.isActive ? styles.active : ''}`}>
             <div onClick={props.closeModal} className={styles.closeModal}>
                 <FontAwesomeIcon className={styles.icon} icon={faTimes} />
             </div>
-            <div className={styles.areaModal}>
+            <form onSubmit={event => submitForm(event)} className={styles.areaModal}>
                 <h2 className={styles.title}>Entre em contato</h2>
                 <div className={styles.inputsGroup}>
                     <div className={styles.areaInput}>
                         <label className={styles.label} htmlFor="nameInput">Nome*</label>
-                        <input className={styles.input} name="nameInput" type="text" />
+                        <input onChange={event => handleInput(event)} required className={styles.input} name="nameInput" type="text" />
                     </div>
                     <div className={styles.groupInput}>
                         <div className={styles.areaInput}>
                             <label className={styles.label} htmlFor="emailInput">Email*</label>
-                            <input className={styles.input} name="emailInput" type="email" />
+                            <input onChange={event => handleInput(event)} required className={styles.input} name="emailInput" type="email" />
                         </div>
                         <div className={styles.areaInput}>
                             <label className={styles.label} htmlFor="occupationInput">Cargo*</label>
-                            <input className={styles.input} name="occupationInput" type="text" />
+                            <input onChange={event => handleInput(event)} required className={styles.input} name="occupationInput" type="text" />
                         </div>
                     </div>
                     <div className={styles.groupInput}>
                         <div className={styles.areaInput}>
                             <label className={styles.label} htmlFor="companyInput">Empresa*</label>
-                            <input className={styles.input} name="companyInput" type="email" />
+                            <input onChange={event => handleInput(event)} required className={styles.input} name="companyInput" type="text" />
                         </div>
                         <div className={styles.areaInput}>
                             <label className={styles.label} htmlFor="quantidadeInput">Quantidade de funcionários*</label>
-                            <select name="quantidadeInput" id="quantidadeInput" className={styles.input}>
+                            <select onChange={event => handleInput(event)} required name="quantidadeInput" id="quantidadeInput" className={styles.input}>
                                 <option value="10-50">10-50</option>
                                 <option value="51-200">51-200</option>
                                 <option value="201-500">201-500</option>
@@ -47,16 +70,16 @@ export default function Modal(props) {
                     </div>
                     <div className={styles.areaInput}>
                         <label className={styles.label} htmlFor="addressInput">Endereço*</label>
-                        <input className={styles.input} name="addressInput" type="text" />
+                        <input onChange={event => handleInput(event)} required className={styles.input} name="addressInput" type="text" />
                     </div>
                     <div className={styles.groupInput}>
                         <div className={styles.areaInput}>
                             <label className={styles.label} htmlFor="phoneInput">Telefone*</label>
-                            <input className={styles.input} name="phoneInput" type="text" />
+                            <input onChange={event => handleInput(event)} required className={styles.input} name="phoneInput" type="text" />
                         </div>
                         <div className={styles.areaInput}>
                             <label className={styles.label} htmlFor="cnpjInput">CNPJ*</label>
-                            <input className={styles.input} name="cnpjInput" type="text" />
+                            <input onChange={event => handleInput(event)} required className={styles.input} name="cnpjInput" type="text" />
                         </div>
                     </div>
                     <fieldset className={styles.fieldset}>
@@ -67,7 +90,7 @@ export default function Modal(props) {
                     </fieldset>
                 </div>
                 <button className={styles.button} type="submit">Enviar</button>
-            </div>
+            </form>
         </aside>
     )
 }

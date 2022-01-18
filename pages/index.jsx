@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Weikki | Sua melhor escolha em uniformes e EPI's</title>
+        <title>Weikki | Sua melhor escolha em uniformes e EPI&apos;s</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
