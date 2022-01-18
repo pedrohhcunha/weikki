@@ -27,7 +27,9 @@ export default function Header(props){
                             <span className={styles.phoneNumber}>49 3322.2593</span>
                         </a>
                     </Link>
-                    <Button large>Comprar agora</Button>
+                    <div className={styles.botao}>
+                        <Button large>Comprar agora</Button>
+                    </div>
                 </div>
             </div>
         </header>

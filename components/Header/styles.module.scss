@@ -147,6 +147,10 @@
                         font-size: 16px;
                     }
                 }
+                
+                .botao{
+                    display: none;
+                }
             }
         }
     }
@@ -175,6 +179,30 @@
     
                     .phoneNumber{
                         font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 500px) {
+        .areaImagem{
+            width: 40vw;
+        }
+        .rightArea{
+
+            .buttons{
+
+                .linkTelefone{
+                    margin-right: 10px;
+
+                    .icon{
+                        width: 18px;
+                        font-size: 18px;
+                        margin-right: 5px;
+                    }
+    
+                    .phoneNumber{
+                        font-size: 18px;
                     }
                 }
             }
