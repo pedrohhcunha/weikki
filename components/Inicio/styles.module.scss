@@ -33,4 +33,17 @@
             }
         }
     }
+
+    @media screen and (max-width: 1700px) {
+        padding: 50px 6%;
+        min-height: auto;
+        background-position: top 0 right -200px;
+
+        h1{
+            font-size: 23px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            line-height: 150%;
+        }    
+    }
 }
