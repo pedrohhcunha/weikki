@@ -60,6 +60,11 @@
                     margin-left: 5px;
                     color: var(--blue);
                     font-size: 22px;
+
+                    @media screen and (max-width: 1700px) {
+                        font-size: 15px;
+                        margin-bottom: 40px;
+                    }
                 }
             }
 
