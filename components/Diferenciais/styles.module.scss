@@ -95,7 +95,12 @@
         }
     }
     @media screen and (max-width: 1000px) {
-
+        h2{
+            font-size: 40px;
+        }
+        h3{
+            font-size: 26px;
+        }
        .cardsArea{
             flex-wrap: wrap;
 

@@ -51,6 +51,12 @@
         }
     }
     @media screen and (max-width: 700px) {
+        h2{
+            font-size: 40px;
+        }
+        h3{
+            font-size: 26px;
+        }
 
         .clientes{
             grid-template-columns: 1fr 1fr 1fr;
