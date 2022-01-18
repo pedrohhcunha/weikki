@@ -33,6 +33,10 @@
             position: relative;
             margin-top: 100px;
 
+            @media screen and (max-width: 1700px) {
+                margin-top: 50px;
+            }
+
             .topArea{
                 position: absolute;
                 top: 0;
@@ -56,6 +60,15 @@
                     .icon{
                         width: 50px;
                         color: var(--white);
+                    }
+
+                    @media screen and (max-width: 1700px) {
+                        height: 70px;
+                        width: 70px;
+
+                        .icon{
+                            width: 40px;
+                        }
                     }
                 }
 
@@ -86,6 +99,10 @@
                 margin-top: 20px;
                 margin-bottom: 20px;
                 min-height:  120px;
+                
+                @media screen and (max-width: 1700px) {
+                    min-height:  160px;
+                }
             }
 
             .areaButton{
