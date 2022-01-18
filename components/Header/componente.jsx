@@ -9,13 +9,14 @@ import Image from 'next/image'
 export default function Header(props){
     return(
         <header className={styles.header}>
+            <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
             <div className={styles.areaImagem}>
                 <Image src={logo} layout="responsive" />
             </div>
             <div className={styles.rightArea}>
                 <nav className={styles.nav}>
                     <ul className={styles.ul}>
-                        <li className={styles.item}><Link href="#a-weikki"><a>A weikki</a></Link></li>
+                        <li className={styles.item}><Link href="#a-weikki"><a>A Weikki</a></Link></li>
                         <li className={styles.item}><Link href="#solucoes"><a>Soluções</a></Link></li>
                         <li className={styles.item}><Link href="#diferenciais"><a>Diferenciais</a></Link></li>
                     </ul>

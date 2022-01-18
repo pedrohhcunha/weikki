@@ -35,18 +35,18 @@ export default function Footer (props){
                     </div>
                 </div>
                 <div className={styles.areaRedes}>
-                    <Link href="https://facebook.com/weikki" target="__blank">
-                        <a className={styles.rede}>
+                    <Link href="https://www.facebook.com/pages/Weikki-Uniformes/166034437265394" target="_blank">
+                        <a target="_blank" className={styles.rede}>
                             <FontAwesomeIcon className={styles.icon} icon={faFacebook} />
                         </a>
                     </Link>
-                    <Link href="https://instagram.com/weikki" target="__blank">
-                        <a className={styles.rede}>
+                    <Link href="https://www.instagram.com/weikkiuniformes" target="_blank">
+                        <a target="_blank" className={styles.rede}>
                             <FontAwesomeIcon className={styles.icon} icon={faInstagram} />
                         </a>
                     </Link>
-                    <Link  href="https://linkedin.com/weikki" target="__blank">
-                        <a className={styles.rede}>
+                    <Link href="https://www.linkedin.com/company/weikki-confeccoes/about/" target="_blank">
+                        <a target="_blank" className={styles.rede}>
                             <FontAwesomeIcon className={styles.icon} icon={faLinkedin} />
                         </a>
                     </Link>
