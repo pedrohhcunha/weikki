@@ -52,4 +52,12 @@
         justify-content: space-around;
         background: linear-gradient(to right, #065345, var(--blue));
     }
+    @media screen and (max-width: 1000px) {
+        h4{
+            font-size: 60px;
+        }
+        h1{
+            font-size: 20px;
+        }   
+    }
 }
