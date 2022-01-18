@@ -32,12 +32,33 @@
 
                 .item{
                     font-size: 30px;
-                    padding-left: 45px;
+                    padding: 0 22.5px;
                     height: 100%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     color: var(--blue);
+                    position: relative;
+                    text-align: center;
+
+                    &::before{
+                        position: absolute;
+                        content: '';
+                        bottom: -20px;
+                        left: 0;
+                        width: 0;
+                        height: 6px;
+                        border-radius: 3px;
+                        background: linear-gradient(to right, var(--green), var(--blue));
+                        transition: .3s;
+                    }
+
+                    &:hover{
+
+                        &::before{
+                            width: 100%;                            
+                        }
+                    }
                 }
             }
         }
