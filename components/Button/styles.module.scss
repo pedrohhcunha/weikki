@@ -17,6 +17,11 @@
         height: 65px;
         font-size: 30px;
         border-radius: 0 32.5px 0 32.5px;
+        
+        @media screen and (max-width: 1700px) {
+            font-size: 22px;
+            height: 50px;
+        }
     }
 
     &.white{
