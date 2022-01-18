@@ -53,7 +53,7 @@ export default function Footer (props){
                 </div>
             </div>
             <div className={styles.direitosArea}>
-                Todos os direitos reservados. WEIKKI 2022
+                Todos os direitos reservados. WEIKKI&copy; 2022
             </div>
         </footer>
     )
