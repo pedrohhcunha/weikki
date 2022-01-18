@@ -29,4 +29,25 @@
             }
         }
     }
+
+    @media screen and (max-width: 1700px) {
+        padding: 50px 6%;
+
+        .areaLogo{
+            width: 30%;
+            margin-right: 5vw;
+        }
+
+        .areaContent{
+            width: 60%;
+    
+            h2{
+                font-size: 80px;
+            }
+            p{
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+        }
+    }
 }
