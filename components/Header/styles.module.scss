@@ -67,4 +67,47 @@
             }
         }
     }
+
+    @media screen and (max-width: 1700px) {
+
+        height: 200px;
+        max-height: 140px;
+
+        .areaImagem{
+            width: 200px;
+        }
+        
+        .rightArea{
+
+            .nav{
+                margin-right: 50px;
+
+                ul{
+
+                    .item{
+
+                        font-size: 25px;
+                        padding-left: 20px;
+                    }
+                }
+            }
+
+            .buttons{
+
+                .linkTelefone{
+                    margin-right: 20px;
+
+                    .icon{
+                        width: 20px;
+                        font-size: 20px;
+                        margin-right: 10px;
+                    }
+    
+                    .phoneNumber{
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
 }
