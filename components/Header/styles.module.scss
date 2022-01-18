@@ -110,4 +110,44 @@
             }
         }
     }
+
+    @media screen and (max-width: 1300px) {
+
+        .areaImagem{
+            width: 150px;
+        }
+        
+        .rightArea{
+
+            .nav{
+                margin-right: 30px;
+
+                ul{
+
+                    .item{
+
+                        font-size: 20px;
+                        padding-left: 20px;
+                    }
+                }
+            }
+
+            .buttons{
+
+                .linkTelefone{
+                    margin-right: 16px;
+
+                    .icon{
+                        width: 16px;
+                        font-size: 16px;
+                        margin-right: 10px;
+                    }
+    
+                    .phoneNumber{
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
 }
