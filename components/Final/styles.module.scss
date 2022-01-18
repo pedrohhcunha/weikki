@@ -62,4 +62,16 @@
             }
         }
     }
+    @media screen and (max-width: 1000px) {
+        flex-wrap: wrap;
+
+        .areaLogo{
+            width: 50%;
+            margin: 0;
+        }
+        .areaContent{
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
 }
