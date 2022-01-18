@@ -12,7 +12,7 @@ import Modal from '../components/Modal/componente.jsx'
 import { useEffect, useState } from 'react'
 
 export default function Home() {
-  const [modalIsActive, setModalIsActive] = useState(true);
+  const [modalIsActive, setModalIsActive] = useState(false);
 
   useEffect(() => {
     window.addEventListener('keydown', event => {
