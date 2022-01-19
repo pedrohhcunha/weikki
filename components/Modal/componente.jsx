@@ -30,6 +30,10 @@ export default function Modal(props) {
     const submitForm = event => {
         event.preventDefault()
         if(cnpj.isValid(dataForm.cnpjInput.replace('/[^0-9]/', ''))){
+
+            document.querySelector('#FormConvert').reset()
+
+
             let products = ["Uniformes profissionais", "Uniformes executivos", "EPIs"]
 
             let dataToSend = {
@@ -64,7 +68,7 @@ export default function Modal(props) {
             <div onClick={props.closeModal} className={styles.closeModal}>
                 <FontAwesomeIcon className={styles.icon} icon={faTimes} />
             </div>
-            <form onSubmit={event => submitForm(event)} className={styles.areaModal}>
+            <form id="FormConvert" onSubmit={event => submitForm(event)} className={styles.areaModal}>
                 <h2 className={styles.title}>Entre em contato</h2>
                 <div className={styles.inputsGroup}>
                     <div className={styles.areaInput}>
