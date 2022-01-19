@@ -6,9 +6,9 @@ import Image from 'next/image'
 import card1 from './images/card1.jpg'
 import card2 from './images/card2.jpg'
 import card3 from './images/card3.jpg'
-import icone1 from './icones/icone1.png'
-import icone2 from './icones/icone2.png'
-import icone3 from './icones/icone3.png'
+import icone1 from './icones/icone1.svg'
+import icone2 from './icones/icone2.svg'
+import icone3 from './icones/icone3.svg'
 
 export default function Solucoes (props){
     return(

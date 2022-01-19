@@ -1,8 +1,8 @@
 import Button from '../Button/componente.jsx'
 import styles from './styles.module.scss';
-import icone from './icones/icone.png'
-import icone2 from './icones/icone2.png'
-import icone3 from './icones/icone3.png'
+import icone from './icones/icone.svg'
+import icone2 from './icones/icone2.svg'
+import icone3 from './icones/icone3.svg'
 import Image from 'next/image'
 
 export default function Diferenciais(props){
