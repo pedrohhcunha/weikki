@@ -159,7 +159,36 @@
         opacity: 1;
         pointer-events: all;
     }
+    
+    @media screen and (max-width: 1700px) {
 
+        .areaModal{
+            max-height: 98vh;
+            overflow-y: auto;
+            border-radius: 0;
+            padding: 20px;
+            border-radius: 10px;
+
+            .title{
+                font-size: 28px;
+            }    
+
+            .inputsGroup{
+                margin: 10px 0;
+            }
+
+            &::-webkit-scrollbar {
+                width: 5px;
+                background: var(--gray);
+                border-radius: 5px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: var(--blue);
+                border-radius: 5px;
+            }
+        }
+    }
     @media screen and (max-width: 1000px) {
 
         .closeModal{
@@ -168,13 +197,21 @@
         }
 
         .areaModal{
+            max-height: auto !important;
+            min-height: 100vh !important;
+            overflow-y: auto;
             width: 100%;
-            height: 100%;
+            height: 100vh;
             border-radius: 0;
             padding: 50px 5%;
 
+            .title{
+                font-size: 34px;
+            }
+
             .inputsGroup{
                 max-width: 500px;
+                margin: 20px 0;
     
                 .areaInput{
                     width: 100%;
