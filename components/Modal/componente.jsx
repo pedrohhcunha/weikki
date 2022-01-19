@@ -26,9 +26,8 @@ export default function Modal(props) {
 
     const submitForm = event => {
         event.preventDefault()
-
         if(cnpj.isValid(dataForm.cnpjInput)){
-            let products = ['Uniformes profissionais', 'Uniformes Executivos', "EPI's"]
+            let products = ["Uniformes profissionais", "Uniformes executivos", "EPIs"]
 
             let dataToSend = {
                 "nome": dataForm.nameInput,

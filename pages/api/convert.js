@@ -58,7 +58,7 @@ export default function handler(req, res) {
             "company_address": endereco,
             "personal_phone": telefone,
             "cf_cnpj_cpf": cnpj,
-            "cf_produtos_de_interesse_lista_weikki ": produto_interesse, 
+            "cf_produtos_de_interesse_lista_weikki": produto_interesse, 
             "cf_quantidade_de_funcionarios": quantidadeFuncionarios,
             "tags": ["weikki", "2022"],
             "available_for_mailing": true
