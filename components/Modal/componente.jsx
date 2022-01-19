@@ -4,6 +4,7 @@ import styles from './styles.module.scss'
 import { useState } from 'react'
 import axios from 'axios'
 import InputMask from "react-input-mask";
+import { cnpj } from 'cpf-cnpj-validator'; 
 
 export default function Modal(props) {
     const [listInteresse, setListInteresse] = useState([false, false, false]);
@@ -25,30 +26,34 @@ export default function Modal(props) {
 
     const submitForm = event => {
         event.preventDefault()
-        let products = ["Uniformes profissionais", "Uniformes executivos", "EPIs"]
+        if(cnpj.isValid(dataForm.cnpjInput)){
+            let products = ["Uniformes profissionais", "Uniformes executivos", "EPIs"]
 
-        let dataToSend = {
-            "nome": dataForm.nameInput,
-            "email": dataForm.emailInput,
-            "empresa": dataForm.companyInput,
-            "emprego": dataForm.occupationInput,
-            "endereco": dataForm.addressInput,
-            "telefone": dataForm.phoneInput,
-            "cnpj": dataForm.cnpjInput,
-            "produto_interesse": products.map((item, index) => listInteresse[index] ? item : null).filter(item => item!== null),
-            "quantidade_funcionarios": dataForm.quantidadeInput
-        }
-
-        console.log("Enviando dados:", dataToSend)
-
-
-        axios.post('/api/convert', dataToSend).then(response => {
-            if(response.data.success){
-                props.closeModal()
-            } else {
-                alert(response.message)
+            let dataToSend = {
+                "nome": dataForm.nameInput,
+                "email": dataForm.emailInput,
+                "empresa": dataForm.companyInput,
+                "emprego": dataForm.occupationInput,
+                "endereco": dataForm.addressInput,
+                "telefone": dataForm.phoneInput,
+                "cnpj": dataForm.cnpjInput,
+                "produto_interesse": products.map((item, index) => listInteresse[index] ? item : null).filter(item => item!== null),
+                "quantidade_funcionarios": dataForm.quantidadeInput
             }
-        })
+
+            console.log("Enviando dados:", dataToSend)
+
+
+            axios.post('/api/convert', dataToSend).then(response => {
+                if(response.data.success){
+                    props.closeModal()
+                } else {
+                    alert(response.message)
+                }
+            })
+        } else {
+            alert("CNPJ inválido!")
+        }
     }
 
     return(
