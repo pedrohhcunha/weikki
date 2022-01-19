@@ -8,7 +8,7 @@ import { cnpj } from 'cpf-cnpj-validator';
 
 export default function Modal(props) {
 
-    const [errorMensage, setErrorMensage] = useState("sdsdsd");
+    const [errorMensage, setErrorMensage] = useState("");
     
     const [listInteresse, setListInteresse] = useState([false, false, false]);
 
@@ -55,7 +55,7 @@ export default function Modal(props) {
                 }
             })
         } else {
-            alert("CNPJ inválido!")
+            setErrorMensage("CNPJ inválido!")
         }
     }
 
@@ -120,8 +120,8 @@ export default function Modal(props) {
                         <div onClick={() => setListInteresse(listInteresse.map((item, index) => index === 2 ? !item : item))} className={`${styles.checkbox} ${listInteresse[2] ? styles.active : ''}`}>EPI&apos;s</div>
                     </fieldset>
                 </div>
+                {errorMensage !== "" ? <div className={styles.span}>{errorMensage}</div> : null}
                 <button className={styles.button} type="submit">Enviar</button>
-                {errorMensage}
             </form>
         </aside>
     )
