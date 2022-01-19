@@ -35,49 +35,52 @@ export default function handler(req, res) {
     })
     .then(response => {
       let access_token = response.data.access_token
-
       let config = {
         headers: {
           Authorization: `Bearer ${access_token}`
         }
       }
 
-      axios.post(process.env.RD_API_URL + '/platform/events',{
-        "event_type": "CONVERSION",
-        "event_family":"CDP",
-        "payload": {
-          "conversion_identifier": tag,
-          "traffic_source": "utm_source",
-          "traffic_medium": "Weikki - evento de conversão",
-          "traffic_campaign": "utm_campaign",
-          "traffic_value ": "utm_term",
-          "job_title": emprego,
-          "name": nome,
-          "email": email,
-          "company_name": empresa,
-          "company_address": endereco,
-          "personal_phone": telefone,
-          "cf_cnpj_cpf": cnpj,
-          "cf_produto_de_interesse_weikki": produto_interesse, 
-          "cf_quantidade_de_funcionarios": quantidadeFuncionarios,
-          "tags": ["weikki", "2022"],
-          "available_for_mailing": true
+      try{
+        axios.post(process.env.RD_API_URL + '/platform/events',{
+          "event_type": "CONVERSION",
+          "event_family":"CDP",
+          "payload": {
+            "conversion_identifier": tag,
+            "traffic_source": "utm_source",
+            "traffic_medium": "Weikki - evento de conversão",
+            "traffic_campaign": "utm_campaign",
+            "traffic_value ": "utm_term",
+            "job_title": emprego,
+            "name": nome,
+            "email": email,
+            "company_name": empresa,
+            "company_address": endereco,
+            "personal_phone": telefone,
+            "cf_cnpj_cpf": cnpj,
+            "cf_produtos_de_interesse_lista_weikki ": produto_interesse, 
+            "cf_quantidade_de_funcionarios": quantidadeFuncionarios,
+            "tags": ["weikki", "2022"],
+            "available_for_mailing": true
+          }
+        }, config).
+        then(formulario => {
+          if(formulario.data.hasOwnProperty('event_uuid')){
+            res.json({
+              success: true,
+              message: "Conversão realizada com sucesso!"
+            })
+          } else {
+            res.json({
+              success: false,
+              message: "Ocorreu um erro durante a conversão"
+            })
+          }
+        })
+      } catch(error){
+          console.log("=>", error)
         }
-      }, config).
-      then(formulario => {
-        if(formulario.data.hasOwnProperty('event_uuid')){
-          res.json({
-            success: true,
-            message: "Conversão realizada com sucesso!"
-          })
-        } else {
-          res.json({
-            success: false,
-            message: "Ocorreu um erro durante a conversão"
-          })
-        }
-      })
-    });
+      });
   } else {
     res.json({
       success: false,
