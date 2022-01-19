@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import styles from './styles.module.scss'
 import { useState } from 'react'
+import axios from 'axios'
 
 export default function Modal(props) {
     const [listInteresse, setListInteresse] = useState([false, false, false]);
@@ -24,8 +25,26 @@ export default function Modal(props) {
     const submitForm = event => {
         event.preventDefault()
         let products = ['Uniformes profissionais', 'Uniformes Executivos', "EPI's"]
-        dataForm.products = products.map((item, index) => listInteresse[index] ? item : null).filter(item => item!== null)
-        console.log("Enviando dados:", dataForm)
+
+        let dataToSend = {
+            "nome": dataForm.nameInput,
+            "email": dataForm.emailInput,
+            "empresa": dataForm.companyInput,
+            "emprego": dataForm.occupationInput,
+            "endereco": dataForm.addressInput,
+            "telefone": dataForm.phoneInput,
+            "cnpj": dataForm.cnpjInput,
+            "produto_interesse": products.map((item, index) => listInteresse[index] ? item : null).filter(item => item!== null),
+            "quantidade_funcionarios": dataForm.quantidadeInput
+        }
+
+        console.log("Enviando dados:", dataToSend)
+
+
+        axios.post('/api/convert', dataToSend).then(response => {
+            console.log(response)
+            props.closeModal()
+        })
     }
 
     return(
