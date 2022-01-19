@@ -2,6 +2,8 @@ import Button from '../Button/componente.jsx'
 import styles from './styles.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAvianex } from '@fortawesome/free-brands-svg-icons';
+import icone from './icones/icone.png'
+import Image from 'next/image'
 
 export default function Diferenciais(props){
     return(
@@ -11,7 +13,7 @@ export default function Diferenciais(props){
             <div className={styles.cardsArea}>
                 <div className={styles.diferencial}>
                     <div className={styles.areaIcon}>
-                        <FontAwesomeIcon className={styles.icon} icon={faAvianex} />
+                        <Image className={styles.icon} src={icone} />
                     </div>
                     <h4>Praticidade e Agilidade</h4>
                     <p>Com uma equipe preparada para atender da melhor forma todos os tipos de setores, você garante praticidade e agilidade na hora de comprar Uniformes e EPI&apos;s.</p>
