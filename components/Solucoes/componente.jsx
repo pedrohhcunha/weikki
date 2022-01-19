@@ -6,6 +6,9 @@ import Image from 'next/image'
 import card1 from './images/card1.jpg'
 import card2 from './images/card2.jpg'
 import card3 from './images/card3.jpg'
+import icone1 from './icones/icone1.png'
+import icone2 from './icones/icone2.png'
+import icone3 from './icones/icone3.png'
 
 export default function Solucoes (props){
     return(
@@ -16,7 +19,7 @@ export default function Solucoes (props){
                 <div className={styles.cardSolucao}>
                     <div className={styles.topArea}>
                         <div className={styles.areaIcon}>
-                            <FontAwesomeIcon className={styles.icon} icon={faAvianex} />
+                            <Image className={styles.icon} src={icone1} />
                         </div>
                         <h4>Uniformes profissionais</h4>
                     </div>
@@ -34,7 +37,7 @@ export default function Solucoes (props){
                 <div className={styles.cardSolucao}>
                     <div className={styles.topArea}>
                         <div className={styles.areaIcon}>
-                            <FontAwesomeIcon className={styles.icon} icon={faAvianex} />
+                            <Image className={styles.icon} src={icone2} />
                         </div>
                         <h4>Uniformes executivos</h4>
                     </div>
@@ -52,7 +55,7 @@ export default function Solucoes (props){
                 <div className={styles.cardSolucao}>
                     <div className={styles.topArea}>
                         <div className={styles.areaIcon}>
-                            <FontAwesomeIcon className={styles.icon} icon={faAvianex} />
+                            <Image className={styles.icon} src={icone3} />
                         </div>
                         <h4>Equipamentos de proteção individual</h4>
                     </div>
