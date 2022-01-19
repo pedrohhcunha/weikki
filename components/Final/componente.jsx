@@ -26,7 +26,7 @@ export default function Final(props){
                 }}/></h2>
                 <p>Estamos prontos para atender a sua necessidade com durabilidade, segurança e conforto. <br />
                 Nosso time de especialistas está aqui para encontrar <strong>a melhor solução para a sua demanda</strong>.</p>
-                <Button white>Falar com especialista</Button>
+                <Button onClick={props.openModal} white>Falar com especialista</Button>
             </div>
         </section>
     )
