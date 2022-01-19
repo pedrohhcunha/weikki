@@ -7,6 +7,9 @@ import InputMask from "react-input-mask";
 import { cnpj } from 'cpf-cnpj-validator'; 
 
 export default function Modal(props) {
+
+    const [errorMensage, setErrorMensage] = useState("sdsdsd");
+    
     const [listInteresse, setListInteresse] = useState([false, false, false]);
 
     const [dataForm, setDataForm] = useState({
@@ -48,7 +51,7 @@ export default function Modal(props) {
                 if(response.data.success){
                     props.closeModal()
                 } else {
-                    alert(response.message)
+                    setErrorMensage(response.message)
                 }
             })
         } else {
@@ -118,6 +121,7 @@ export default function Modal(props) {
                     </fieldset>
                 </div>
                 <button className={styles.button} type="submit">Enviar</button>
+                {errorMensage}
             </form>
         </aside>
     )
