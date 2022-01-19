@@ -3,6 +3,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import styles from './styles.module.scss'
 import { useState } from 'react'
 import axios from 'axios'
+import InputMask from "react-input-mask";
 
 export default function Modal(props) {
     const [listInteresse, setListInteresse] = useState([false, false, false]);
@@ -94,11 +95,11 @@ export default function Modal(props) {
                     <div className={styles.groupInput}>
                         <div className={styles.areaInput}>
                             <label className={styles.label} htmlFor="phoneInput">Telefone*</label>
-                            <input onChange={event => handleInput(event)} required className={styles.input} name="phoneInput" type="text" />
+                            <InputMask value={dataForm.phoneInput} mask="99 9 9999 9999" onChange={event => handleInput(event)} required className={styles.input} name="phoneInput" type="text" />
                         </div>
                         <div className={styles.areaInput}>
                             <label className={styles.label} htmlFor="cnpjInput">CNPJ*</label>
-                            <input onChange={event => handleInput(event)} required className={styles.input} name="cnpjInput" type="text" />
+                            <InputMask value={dataForm.cnpjInput} mask="99.999.999/9999-99" onChange={event => handleInput(event)} required className={styles.input} name="cnpjInput" type="text" />
                         </div>
                     </div>
                     <fieldset className={styles.fieldset}>
