@@ -43,8 +43,11 @@ export default function Modal(props) {
 
 
         axios.post('/api/convert', dataToSend).then(response => {
-            console.log(response)
-            props.closeModal()
+            if(response.data.success){
+                props.closeModal()
+            } else {
+                alert(response.message)
+            }
         })
     }
 
