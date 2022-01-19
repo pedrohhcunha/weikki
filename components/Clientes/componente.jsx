@@ -22,6 +22,9 @@ import tremea from './images/tremea.png'
 import uceff from './images/uceff.png'
 import unimed from './images/unimed.png'
 import zoetis from './images/zoetis.png'
+import tirol from './images/tirol.png'
+import dimensao from './images/dimensao.png'
+import angelLira from './images/angelLira.png'
 
 export default function Clientes (props){
     return(
@@ -50,6 +53,9 @@ export default function Clientes (props){
                 <Image className={styles.cliente} src={uceff} layout="responsive" />
                 <Image className={styles.cliente} src={unimed} layout="responsive" />
                 <Image className={styles.cliente} src={zoetis} layout="responsive" />
+                <Image className={styles.cliente} src={tirol} layout="responsive" />
+                <Image className={styles.cliente} src={dimensao} layout="responsive" />
+                <Image className={styles.cliente} src={angelLira} layout="responsive" />
             </div>
         </section>
     )

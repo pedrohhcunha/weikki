@@ -19,7 +19,7 @@ export default function Diferenciais(props){
                     <p>Com uma equipe preparada para atender da melhor forma todos os tipos de setores, você garante praticidade e agilidade na hora de comprar Uniformes e EPI&apos;s.</p>
                 </div>
                 <div className={styles.diferencial}>
-                    <div className={styles.areaIcon}>]
+                    <div className={styles.areaIcon}>
                         <Image className={styles.icon} src={icone2} />
                     </div>
                     <h4>Alta durabilidade, Segurança e Conforto</h4>
