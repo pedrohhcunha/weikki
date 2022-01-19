@@ -25,7 +25,7 @@ export default function Modal(props) {
 
     const submitForm = event => {
         event.preventDefault()
-        let products = ['Uniformes profissionais', 'Uniformes Executivos', "EPI's"]
+        let products = ["Uniformes profissionais", "Uniformes executivos", "EPIs"]
 
         let dataToSend = {
             "nome": dataForm.nameInput,
