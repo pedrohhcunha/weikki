@@ -29,7 +29,7 @@ export default function Modal(props) {
 
     const submitForm = event => {
         event.preventDefault()
-        if(cnpj.isValid(dataForm.cnpjInput)){
+        if(cnpj.isValid(dataForm.cnpjInput.replace('/[^0-9]/', ''))){
             let products = ["Uniformes profissionais", "Uniformes executivos", "EPIs"]
 
             let dataToSend = {
