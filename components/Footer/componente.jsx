@@ -45,7 +45,7 @@ export default function Footer (props){
                             <FontAwesomeIcon className={styles.icon} icon={faInstagram} />
                         </a>
                     </Link>
-                    <Link href="https://www.linkedin.com/company/weikki-confeccoes/about/" target="_blank">
+                    <Link href="https://www.linkedin.com/company/weikki/about/" target="_blank">
                         <a target="_blank" className={styles.rede}>
                             <FontAwesomeIcon className={styles.icon} icon={faLinkedin} />
                         </a>
