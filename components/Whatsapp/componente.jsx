@@ -43,7 +43,7 @@ export default function Whatsapp (props) {
                 "endereco": dataForm.addressInputWhats,
                 "telefone": dataForm.phoneInputWhats,
                 "cnpj": dataForm.cnpjInputWhats,
-                "produto_interesse": [''],
+                "produto_interesse": ["Uniformes profissionais", "Uniformes executivos", "EPIs"],
                 "quantidade_funcionarios": dataForm.quantidadeInputWhats
             }
 
