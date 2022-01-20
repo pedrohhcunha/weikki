@@ -5,6 +5,8 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import InputMask from "react-input-mask";
+import axios from 'axios'
+import { cnpj } from 'cpf-cnpj-validator'; 
 
 export default function Whatsapp (props) {
     const [statusModal, setStatusModal] = useState(false);
@@ -31,9 +33,30 @@ export default function Whatsapp (props) {
         if(stepModal <= 1) {
             setStepModal(stepModal + 1)
             console.log("Passando de fase")
+        } else if(cnpj.isValid(dataForm.cnpjInputWhats.replace('/[^0-9]/', ''))){
+
+            let dataToSend = {
+                "nome": dataForm.nameInputWhats,
+                "email": dataForm.emailInputWhats,
+                "empresa": dataForm.companyInputWhats,
+                "emprego": dataForm.occupationInputWhats,
+                "endereco": dataForm.addressInputWhats,
+                "telefone": dataForm.phoneInputWhats,
+                "cnpj": dataForm.cnpjInputWhats,
+                "produto_interesse": [''],
+                "quantidade_funcionarios": dataForm.quantidadeInputWhats
+            }
+
+            document.querySelector('#FormConvertWhats').reset()
+
+            
+            axios.post('/api/convert', dataToSend).then(response => {
+                if(response.data.success){
+                    setStatusModal(false)
+                }
+            })
         } else {
-            console.log("Enviando dados")
-            console.log(dataForm)
+            console.log("erro")
         }
     }
 
@@ -41,10 +64,10 @@ export default function Whatsapp (props) {
     return(
         <aside className={`${statusModal ? styles.active : ''} ${styles.aside}`}>
             <div className={styles.contentArea}>
-                <form onSubmit={event => submitForm(event)} className={styles.form}>
+                <form id="FormConvertWhats" onSubmit={event => submitForm(event)} className={styles.form}>
                     <header className={styles.headerForm}>
                         <h2 className={styles.title}>Olá! Preencha os campos abaixo para iniciar a conversa no whatsapp.</h2>
-                        <FontAwesomeIcon className={styles.icon} icon={faTimes} />
+                        <FontAwesomeIcon onClick={() => setStatusModal(false)} className={styles.icon} icon={faTimes} />
                     </header>
                     <div className={styles.contentForm}>
                         <div className={styles.inputs}>

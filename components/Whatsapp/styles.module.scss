@@ -18,6 +18,8 @@
         .form{
             background-color: var(--gray);
             min-width: 500px;
+            transform: translateX(200%);
+            transition: .3s;
 
             .headerForm{
                 background-color: var(--green);
@@ -28,13 +30,14 @@
 
                 .title{
                     font-size: 14px;
-                    color: var(--gray);
+                    color: var(--white);
                 }
 
                 .icon{
                     width: 14px;
                     color: var(--gray);
                     margin-left: 20px;
+                    cursor: pointer;
                 }
             }
             .contentForm{
@@ -129,5 +132,13 @@
 
     &.active{
         background-color: var(--blue25);
+
+        .contentArea{
+
+            .form{
+
+                transform: translateX(0)
+            }
+        }
     }
 }
