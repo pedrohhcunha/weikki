@@ -45,7 +45,8 @@ export default function Modal(props) {
                 "telefone": dataForm.phoneInput,
                 "cnpj": dataForm.cnpjInput,
                 "produto_interesse": products.map((item, index) => listInteresse[index] ? item : null).filter(item => item!== null),
-                "quantidade_funcionarios": dataForm.quantidadeInput
+                "quantidade_funcionarios": dataForm.quantidadeInput,
+                "tag": "formulario-de-qualificacao-weikki"
             }
 
             console.log("Enviando dados:", dataToSend)

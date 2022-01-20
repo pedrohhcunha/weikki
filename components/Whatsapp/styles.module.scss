@@ -10,6 +10,7 @@
     padding: 20px;
     transition: .3s;
     z-index: 100000;
+    pointer-events: none;
 
     .contentArea{
         display: block;
@@ -122,6 +123,7 @@
             cursor: pointer;
             transition: .3s;
             float: right;
+            pointer-events: all;
 
             &:hover{
                 transform: translateY(-5px);
@@ -132,7 +134,8 @@
 
     &.active{
         background-color: var(--blue25);
-
+        pointer-events: all;
+        
         .contentArea{
 
             .form{
