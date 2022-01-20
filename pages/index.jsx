@@ -8,6 +8,7 @@ import Clientes from '../components/Clientes/componente.jsx'
 import Final from '../components/Final/componente.jsx'
 import Footer from '../components/Footer/componente.jsx'
 import Modal from '../components/Modal/componente.jsx'
+import Whatsapp from '../components/Whatsapp/componente.jsx'
 
 import { useEffect, useState } from 'react'
 
@@ -40,6 +41,7 @@ export default function Home() {
         <Footer />
 
         <Modal isActive={modalIsActive} closeModal={() => setModalIsActive(false)}/>
+        <Whatsapp />
       </main>
     </>
   )
