@@ -26,7 +26,7 @@ export default function handler(req, res) {
     let cnpj = req.body.cnpj
     let produto_interesse = req.body.produto_interesse
     let quantidadeFuncionarios = req.body.quantidade_funcionarios
-    let tag = "formulario-de-qualificacao-weikki"
+    let tag =  req.body.tag
 
     axios.post(process.env.RD_API_URL + '/auth/token',{  
       "client_id": process.env.RD_CLIENT_ID,
