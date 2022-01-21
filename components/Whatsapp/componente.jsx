@@ -143,7 +143,7 @@ export default function Whatsapp (props) {
                                     setStepModal(stepModal >= 1 ? stepModal - 1 : stepModal)
                                 }} className={`${styles.white} ${styles.buttonForm}`} type="button">Voltar</button>   
                             : null}
-                            <button className={`${styles.buttonForm}`} type="submit">Avançar</button>
+                            <button className={`${styles.buttonForm}`} type="submit">{stepModal <= 1 ? "Avançar" : "Enviar"}</button>
                         </div>
                     </div>
                 </form>
