@@ -44,7 +44,8 @@ export default function Whatsapp (props) {
                 "telefone": dataForm.phoneInputWhats,
                 "cnpj": dataForm.cnpjInputWhats,
                 "produto_interesse": ["Uniformes profissionais", "Uniformes executivos", "EPIs"],
-                "quantidade_funcionarios": dataForm.quantidadeInputWhats
+                "quantidade_funcionarios": dataForm.quantidadeInputWhats,
+                "tag": "formulario-de-qualificacao-weikki-whatsapp"
             }
 
             document.querySelector('#FormConvertWhats').reset()

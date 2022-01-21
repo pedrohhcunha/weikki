@@ -35,7 +35,7 @@ export default function Footer (props){
                     </div>
                 </div>
                 <div className={styles.areaRedes}>
-                    <Link href="https://www.facebook.com/pages/Weikki-Uniformes/166034437265394" target="_blank">
+                    <Link href="https://www.facebook.com/weikki/" target="_blank">
                         <a target="_blank" className={styles.rede}>
                             <FontAwesomeIcon className={styles.icon} icon={faFacebook} />
                         </a>
