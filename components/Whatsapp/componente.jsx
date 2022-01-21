@@ -22,7 +22,7 @@ export default function Whatsapp (props) {
         emailInputWhats: "",
         occupationInputWhats: "",
         companyInputWhats: "",
-        quantidadeInputWhats: "10-50",
+        quantidadeInputWhats: "",
         stateInputWhats: "",
         cityInputWhats: "",
         /*addressInputWhats: "", */
@@ -99,6 +99,7 @@ export default function Whatsapp (props) {
                             <div className={`${styles.areaInput} ${stepModal === 1 ? styles.active : ''}`} >
                                 <label className={styles.label} htmlFor="quantidadeInputWhats">Funcionários:</label>
                                 <select onChange={event => handleInput(event)} required name="quantidadeInput" id="quantidadeInputWhats" className={`${styles.input} ${styles.select}`}>
+                                    <option value="" selected disabled="disabled">Selecione...</option>
                                     <option value="10-50">10-50</option>
                                     <option value="51-200">51-200</option>
                                     <option value="201-500">201-500</option>
@@ -120,6 +121,7 @@ export default function Whatsapp (props) {
                                 <div className={styles.areaInput} >
                                     <label className={styles.label} htmlFor="stateInputWhats">Estado:</label>
                                     <select onChange={event => handleInput(event)} required name="stateInputWhats" id="stateInputWhats" className={styles.input}>
+                                        <option value="" disabled>Selecione...</option>
                                         {states.map((state, index) => (
                                             <option key={index} value={state}>{state}</option>
                                         ))}
