@@ -9,6 +9,10 @@ import axios from 'axios'
 import { cnpj } from 'cpf-cnpj-validator'; 
 
 export default function Whatsapp (props) {
+
+    let states = ['AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS', 'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO']
+
+
     const [statusModal, setStatusModal] = useState(false);
 
     const [stepModal, setStepModal] = useState(0);
@@ -19,7 +23,9 @@ export default function Whatsapp (props) {
         occupationInputWhats: "",
         companyInputWhats: "",
         quantidadeInputWhats: "10-50",
-        addressInputWhats: "",
+        stateInputWhats: "",
+        cityInputWhats: "",
+        /*addressInputWhats: "", */
         phoneInputWhats: "",
         cnpjInputWhats: ""
     });
@@ -40,7 +46,9 @@ export default function Whatsapp (props) {
                 "email": dataForm.emailInputWhats,
                 "empresa": dataForm.companyInputWhats,
                 "emprego": dataForm.occupationInputWhats,
-                "endereco": dataForm.addressInputWhats,
+                "state": dataForm.stateInputWhats,
+                "city": dataForm.cityInputWhats,
+                /* "endereco": dataForm.addressInputWhats, */
                 "telefone": dataForm.phoneInputWhats,
                 "cnpj": dataForm.cnpjInputWhats,
                 "produto_interesse": ["Uniformes profissionais", "Uniformes executivos", "EPIs"],
@@ -100,9 +108,23 @@ export default function Whatsapp (props) {
                                     <option value="10001+">10001+</option>
                                 </select>
                             </div>
-                            <div className={`${styles.areaInput} ${stepModal === 1 ? styles.active : ''}`} >
+                            {/* <div className={`${styles.areaInput} ${stepModal === 1 ? styles.active : ''}`} >
                                 <label className={styles.label} htmlFor="addressInputWhats">Endereço:</label>
                                 <input onChange={event => handleInput(event)} className={styles.input} name="addressInputWhats" type="text" />
+                            </div> */}
+                            <div className={`${styles.groupInput} ${stepModal === 1 ? styles.active : ''}`}>
+                                <div className={styles.areaInput} >
+                                    <label className={styles.label} htmlFor="cityInputWhats">Cidade:</label>
+                                    <input onChange={event => handleInput(event)} className={styles.input} name="cityInputWhats" type="text" />
+                                </div>
+                                <div className={styles.areaInput} >
+                                    <label className={styles.label} htmlFor="stateInputWhats">Estado:</label>
+                                    <select onChange={event => handleInput(event)} required name="stateInputWhats" id="stateInputWhats" className={styles.input}>
+                                        {states.map((state, index) => (
+                                            <option key={index} value={state}>{state}</option>
+                                        ))}
+                                    </select>
+                                </div>
                             </div>
                             <div className={`${styles.areaInput} ${stepModal === 2 ? styles.active : ''}`} >
                                 <label className={styles.label} htmlFor="phoneInputWhats">Telefone:</label>

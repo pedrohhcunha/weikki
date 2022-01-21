@@ -46,6 +46,31 @@
                 padding: 20px;
 
                 .inputs{
+                    .groupInput{
+                        width: 100%;
+                        background-color: #fff;
+                        border-radius: 5px 0 5px 5px;
+                        border: 1px solid var(--gray);
+                        margin-bottom: 10px;
+                        padding: 10px 10px;
+                        display: none;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        .areaInput{
+                            border-radius:0;
+                            background-color: transparent;
+                            border: none;
+                            margin-bottom: 0;
+                            padding: 0;
+                            display: flex;
+                            width: 49%;
+                        }
+                        
+                        &.active{
+                            display: flex;
+                        }
+                    }
 
                     .areaInput{
                         width: 100%;
