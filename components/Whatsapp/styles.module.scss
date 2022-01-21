@@ -112,6 +112,16 @@
                     }
                 }
 
+                .error{
+                    width: 100%;
+                    padding: 10px;
+                    color: #921818;
+                    background-color: var(--white);
+                    border-radius: 5px 0 5px 5px;
+                    border: 1px solid var(--gray);
+                    margin-bottom: 10px;
+                }
+
                 .buttons{
                     width: 100%;
                     display: flex;

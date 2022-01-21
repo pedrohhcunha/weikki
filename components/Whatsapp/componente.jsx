@@ -10,6 +10,8 @@ import { cnpj } from 'cpf-cnpj-validator';
 
 export default function Whatsapp (props) {
 
+    const [error, setError] = useState("");
+
     let states = ['AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS', 'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO']
 
 
@@ -39,14 +41,16 @@ export default function Whatsapp (props) {
 
         if(stepModal === 0){
             if(dataForm.nameInputWhats === "" || dataForm.emailInputWhats === "" || dataForm.cargoInputWhats === ""){
-                console.log("Por favor, preencha todos os campos!")
+                setError("Por favor, preencha todos os campos!")
             } else {
+                setError("")
                 setStepModal(stepModal + 1)
             }
         } else if(stepModal === 1){
             if(dataForm.companyInputWhats === "" || dataForm.quantidadeInputWhats === "" || dataForm.cityInputWhats === "" || dataForm.stateInputWhats === ""){
-                console.log("Por favor, preencha todos os campos!")
+                setError("Por favor, preencha todos os campos!")
             } else {
+                setError("")
                 setStepModal(stepModal + 1)
             }
         } else if(stepModal === 2){
@@ -73,14 +77,17 @@ export default function Whatsapp (props) {
                     axios.post('/api/convert', dataToSend).then(response => {
                         if(response.data.success){
                             setStatusModal(false)
+                            setError("")
+                        } else {
+                            setError(response.data.message)
                         }
                     })
                 } else {
-                    console.log("CNPJ inválido!")
+                    setError("CNPJ inválido!")
                 }
             }
         } else {
-            console.log("Por favor, preencha todos os campos!")
+            setError("Por favor, preencha todos os campos!")
         }
     }
 
@@ -152,6 +159,11 @@ export default function Whatsapp (props) {
                                 <InputMask onChange={event => handleInput(event)} value={dataForm.cnpjInputWhats} mask="99.999.999/9999-99" className={styles.input} name="cnpjInputWhats" type="text" />
                             </div>
                         </div>
+                        {error !== "" ? 
+                            <div className={styles.error}>
+                                {error}
+                            </div>
+                        : null}
                         <div className={styles.buttons}>
                             {stepModal >= 1 ?
                                 <button onClick={() => { 
