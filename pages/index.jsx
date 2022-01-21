@@ -29,6 +29,7 @@ export default function Home() {
       <Head>
         <title>Weikki | Sua melhor escolha em uniformes e EPI&apos;s</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="facebook-domain-verification" content="2tvzs8l0f00vthterv5hopcb37jyza" />
         <script dangerouslySetInnerHTML={{__html: `
              (function(h,o,t,j,a,r){
               h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
