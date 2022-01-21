@@ -8,6 +8,8 @@ import { cnpj } from 'cpf-cnpj-validator';
 
 export default function Modal(props) {
 
+    let states = ['AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS', 'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO']
+
     const [errorMensage, setErrorMensage] = useState("");
     
     const [listInteresse, setListInteresse] = useState([false, false, false]);
@@ -20,7 +22,9 @@ export default function Modal(props) {
         quantidadeInput: "",
         addressInput: "",
         phoneInput: "",
-        cnpjInput: ""
+        cnpjInput: "",
+        cityInput: "",
+        stateInput: ""
     });
 
     const handleInput = event => {
@@ -41,7 +45,9 @@ export default function Modal(props) {
                 "email": dataForm.emailInput,
                 "empresa": dataForm.companyInput,
                 "emprego": dataForm.occupationInput,
-                "endereco": dataForm.addressInput,
+                "state": dataForm.stateInput,
+                "city": dataForm.cityInput,
+                /* "endereco": dataForm.addressInput, */
                 "telefone": dataForm.phoneInput,
                 "cnpj": dataForm.cnpjInput,
                 "produto_interesse": products.map((item, index) => listInteresse[index] ? item : null).filter(item => item!== null),
@@ -104,9 +110,23 @@ export default function Modal(props) {
                             </select>
                         </div>
                     </div>
-                    <div className={styles.areaInput}>
+                    {/*<div className={styles.areaInput}>
                         <label className={styles.label} htmlFor="addressInput">Endereço*</label>
                         <input onChange={event => handleInput(event)} required className={styles.input} name="addressInput" type="text" />
+                    </div> */}
+                    <div className={styles.groupInput}>
+                        <div className={styles.areaInput}>
+                            <label className={styles.label} htmlFor="stateInput">Estado*</label>
+                            <select onChange={event => handleInput(event)} required name="stateInput" id="stateInput" className={styles.input}>
+                                {states.map((state, index) => (
+                                    <option key={index} value={state}>{state}</option>
+                                ))}
+                            </select>
+                        </div>
+                        <div className={styles.areaInput}>
+                            <label className={styles.label} htmlFor="cityInput">Cidade*</label>
+                            <input onChange={event => handleInput(event)} required className={styles.input} name="cityInput" type="text" />
+                        </div>
                     </div>
                     <div className={styles.groupInput}>
                         <div className={styles.areaInput}>
