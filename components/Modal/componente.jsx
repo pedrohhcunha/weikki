@@ -141,7 +141,7 @@ export default function Modal(props) {
                         </div>
                     </div>
                     <fieldset className={styles.fieldset}>
-                        <legend className={styles.legend}>Produtos de interesse</legend>
+                        <legend className={styles.legend}>Selecione os produtos de interesse</legend>
                         <div onClick={() => setListInteresse(listInteresse.map((item, index) => index === 0 ? !item : item))} className={`${styles.checkbox} ${listInteresse[0] ? styles.active : ''}`}>Uniformes profissionais</div>
                         <div onClick={() => setListInteresse(listInteresse.map((item, index) => index === 1 ? !item : item))} className={`${styles.checkbox} ${listInteresse[1] ? styles.active : ''}`}>Uniforme Executivos</div>
                         <div onClick={() => setListInteresse(listInteresse.map((item, index) => index === 2 ? !item : item))} className={`${styles.checkbox} ${listInteresse[2] ? styles.active : ''}`}>EPI&apos;s</div>
