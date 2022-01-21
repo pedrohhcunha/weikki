@@ -21,7 +21,8 @@ export default function handler(req, res) {
     let email = req.body.email
     let empresa = req.body.empresa
     let emprego = req.body.emprego
-    let endereco = req.body.endereco
+    let cidade = req.body.cidade
+    let estado = req.body.estado
     let telefone = req.body.telefone
     let cnpj = req.body.cnpj
     let produto_interesse = req.body.produto_interesse
@@ -55,7 +56,8 @@ export default function handler(req, res) {
             "name": nome,
             "email": email,
             "company_name": empresa,
-            "company_address": endereco,
+            "state": estado,
+            "city": cidade,
             "personal_phone": telefone,
             "cf_cnpj_cpf": cnpj,
             "cf_produtos_de_interesse_lista_weikki": produto_interesse, 
