@@ -36,36 +36,51 @@ export default function Whatsapp (props) {
 
     const submitForm = event => {
         event.preventDefault();
-        if(stepModal <= 1) {
-            setStepModal(stepModal + 1)
-            console.log("Passando de fase")
-        } else if(cnpj.isValid(dataForm.cnpjInputWhats.replace('/[^0-9]/', ''))){
 
-            let dataToSend = {
-                "nome": dataForm.nameInputWhats,
-                "email": dataForm.emailInputWhats,
-                "empresa": dataForm.companyInputWhats,
-                "emprego": dataForm.occupationInputWhats,
-                "estado": dataForm.stateInputWhats,
-                "cidade": dataForm.cityInputWhats,
-                /* "endereco": dataForm.addressInputWhats, */
-                "telefone": dataForm.phoneInputWhats,
-                "cnpj": dataForm.cnpjInputWhats,
-                "produto_interesse": ["Uniformes profissionais", "Uniformes executivos", "EPIs"],
-                "quantidade_funcionarios": dataForm.quantidadeInputWhats,
-                "tag": "formulario-de-qualificacao-weikki-whatsapp"
+        if(stepModal === 0){
+            if(dataForm.nameInputWhats === "" || dataForm.emailInputWhats === "" || dataForm.cargoInputWhats === ""){
+                console.log("Por favor, preencha todos os campos!")
+            } else {
+                setStepModal(stepModal + 1)
             }
-
-            document.querySelector('#FormConvertWhats').reset()
-
-            
-            axios.post('/api/convert', dataToSend).then(response => {
-                if(response.data.success){
-                    setStatusModal(false)
+        } else if(stepModal === 1){
+            if(dataForm.companyInputWhats === "" || dataForm.quantidadeInputWhats === "" || dataForm.cityInputWhats === "" || dataForm.stateInputWhats === ""){
+                console.log("Por favor, preencha todos os campos!")
+            } else {
+                setStepModal(stepModal + 1)
+            }
+        } else if(stepModal === 2){
+            if(dataForm.phoneInputWhats !== "" && dataForm.cnpjInputWhats !== ""){
+                if(cnpj.isValid(dataForm.cnpjInputWhats.replace('/[^0-9]/', ''))){
+                    let dataToSend = {
+                        "nome": dataForm.nameInputWhats,
+                        "email": dataForm.emailInputWhats,
+                        "empresa": dataForm.companyInputWhats,
+                        "emprego": dataForm.occupationInputWhats,
+                        "estado": dataForm.stateInputWhats,
+                        "cidade": dataForm.cityInputWhats,
+                        /* "endereco": dataForm.addressInputWhats, */
+                        "telefone": dataForm.phoneInputWhats,
+                        "cnpj": dataForm.cnpjInputWhats,
+                        "produto_interesse": ["Uniformes profissionais", "Uniformes executivos", "EPIs"],
+                        "quantidade_funcionarios": dataForm.quantidadeInputWhats,
+                        "tag": "formulario-de-qualificacao-weikki-whatsapp"
+                    }
+        
+                    document.querySelector('#FormConvertWhats').reset()
+        
+                    
+                    axios.post('/api/convert', dataToSend).then(response => {
+                        if(response.data.success){
+                            setStatusModal(false)
+                        }
+                    })
+                } else {
+                    console.log("CNPJ inválido!")
                 }
-            })
+            }
         } else {
-            console.log("erro")
+            console.log("Por favor, preencha todos os campos!")
         }
     }
 
