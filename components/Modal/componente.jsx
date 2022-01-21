@@ -100,7 +100,7 @@ export default function Modal(props) {
                         <div className={styles.areaInput}>
                             <label className={styles.label} htmlFor="quantidadeInput">Quantidade de funcionários*</label>
                             <select onChange={event => handleInput(event)} required name="quantidadeInput" id="quantidadeInput" className={styles.input}>
-                                <option value="" selected disabled="disabled">Selecione...</option>
+                                <option value="" selected disabled>Selecione...</option>
                                 <option value="10-50">10-50</option>
                                 <option value="51-200">51-200</option>
                                 <option value="201-500">201-500</option>
@@ -119,7 +119,7 @@ export default function Modal(props) {
                         <div className={styles.areaInput}>
                             <label className={styles.label} htmlFor="stateInput">Estado*</label>
                             <select onChange={event => handleInput(event)} required name="stateInput" id="stateInput" className={styles.input}>
-                                <option value="" selected disabled="disabled">Selecione...</option>
+                                <option value="" selected disabled>Selecione...</option>
                                 {states.map((state, index) => (
                                     <option key={index} value={state}>{state}</option>
                                 ))}
