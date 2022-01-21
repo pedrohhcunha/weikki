@@ -46,8 +46,8 @@ export default function Whatsapp (props) {
                 "email": dataForm.emailInputWhats,
                 "empresa": dataForm.companyInputWhats,
                 "emprego": dataForm.occupationInputWhats,
-                "state": dataForm.stateInputWhats,
-                "city": dataForm.cityInputWhats,
+                "estado": dataForm.stateInputWhats,
+                "cidade": dataForm.cityInputWhats,
                 /* "endereco": dataForm.addressInputWhats, */
                 "telefone": dataForm.phoneInputWhats,
                 "cnpj": dataForm.cnpjInputWhats,

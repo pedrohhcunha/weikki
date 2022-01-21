@@ -45,8 +45,8 @@ export default function Modal(props) {
                 "email": dataForm.emailInput,
                 "empresa": dataForm.companyInput,
                 "emprego": dataForm.occupationInput,
-                "state": dataForm.stateInput,
-                "city": dataForm.cityInput,
+                "estado": dataForm.stateInput,
+                "cidade": dataForm.cityInput,
                 /* "endereco": dataForm.addressInput, */
                 "telefone": dataForm.phoneInput,
                 "cnpj": dataForm.cnpjInput,
