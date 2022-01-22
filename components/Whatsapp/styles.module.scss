@@ -22,6 +22,11 @@
             transform: translateX(200%);
             transition: .3s;
 
+            @media screen and (max-width: 1000px) {
+                min-width: auto !important;
+                width: 100%;
+            }
+
             .headerForm{
                 background-color: var(--green);
                 padding: 20px;
