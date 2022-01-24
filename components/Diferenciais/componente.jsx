@@ -1,11 +1,19 @@
-import Button from '../Button/componente.jsx'
+//Componente para mostrar os diferenciais da empresa
+
+//Importando módulo para a estilização do componente
 import styles from './styles.module.scss';
+
+//Importando os componentes necessários
+import Button from '../Button/componente.jsx'
 import icone from './icones/icone.svg'
 import icone2 from './icones/icone2.svg'
 import icone3 from './icones/icone3.svg'
 import Image from 'next/image'
 
+//Definindo e exportando o componente
 export default function Diferenciais(props){
+
+    //Retorando o JSX do componente
     return(
         <section id="diferenciais" className={styles.section}>
             <h2>Nossos Diferenciais</h2>
