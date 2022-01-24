@@ -1,24 +1,38 @@
-import styles from './styles.module.scss';
-import logo from './images/whatsapp.png';
-import Image from 'next/image'
-import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
-import InputMask from "react-input-mask";
-import axios from 'axios'
-import { cnpj } from 'cpf-cnpj-validator'; 
+//Componente que representar o botão do whatsapp + formulário de cadastro
 
+//Importando o módulo para estilização
+import styles from './styles.module.scss';
+
+//Importando imagem do whatsapp
+import logo from './images/whatsapp.png';
+
+//Importando componenentes necessários
+import Image from 'next/image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { cnpj } from 'cpf-cnpj-validator'; 
+import axios from 'axios'
+import InputMask from "react-input-mask";
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+
+//Importando hooks necessários
+import { useState } from 'react';
+
+//Definindo e exportando o componente
 export default function Whatsapp (props) {
 
+    //Utilizando variável para controlar mensagem de erro no formulário
     const [error, setError] = useState("");
 
+    //Definindo variável auxiliar para geral select com todos os estados
     let states = ['AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS', 'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO']
 
-
+    //Defininfo variável para armazenar o estado do modal
     const [statusModal, setStatusModal] = useState(false);
 
+    //Usando estado para armazenar a fase de resposta atual do formulário
     const [stepModal, setStepModal] = useState(0);
 
+    //Criando objeto para armazenar os dados coletados no formulário
     const [dataForm, setDataForm] = useState({
         nameInputWhats: "",
         emailInputWhats: "",
@@ -32,14 +46,19 @@ export default function Whatsapp (props) {
         cnpjInputWhats: ""
     });
 
+    //Criando função para atualizar os dados do formulário sempre que o valor de input ou select for modificados
     const handleInput = event => {
         setDataForm({...dataForm, [event.target.name]: event.target.value});
     }
 
+
+    //Definindo a função a ser executado quando for clicado no botão "Avançar" ou "Enviar"
     const submitForm = event => {
         event.preventDefault();
 
         if(stepModal === 0){
+
+            //Verifica se os campos da fase atual foram respondidos
             if(dataForm.nameInputWhats === "" || dataForm.emailInputWhats === "" || dataForm.cargoInputWhats === ""){
                 setError("Por favor, preencha todos os campos!")
             } else {
@@ -47,6 +66,7 @@ export default function Whatsapp (props) {
                 setStepModal(stepModal + 1)
             }
         } else if(stepModal === 1){
+            //Verifica se os campos da fase atual foram respondidos
             if(dataForm.companyInputWhats === "" || dataForm.quantidadeInputWhats === "" || dataForm.cityInputWhats === "" || dataForm.stateInputWhats === ""){
                 setError("Por favor, preencha todos os campos!")
             } else {
@@ -54,8 +74,13 @@ export default function Whatsapp (props) {
                 setStepModal(stepModal + 1)
             }
         } else if(stepModal === 2){
+            //Verifica se os campos da fase atual foram respondidos
             if(dataForm.phoneInputWhats !== "" && dataForm.cnpjInputWhats !== ""){
+
+                //Verifica se o CNPJ digitado é um CNPJ válido
                 if(cnpj.isValid(dataForm.cnpjInputWhats.replace('/[^0-9]/', ''))){
+
+                    //Padroniza os dados a serem enviados via API
                     let dataToSend = {
                         "nome": dataForm.nameInputWhats,
                         "email": dataForm.emailInputWhats,
@@ -70,14 +95,17 @@ export default function Whatsapp (props) {
                         "quantidade_funcionarios": dataForm.quantidadeInputWhats,
                         "tag": "formulario-de-qualificacao-weikki-whatsapp"
                     }
-        
-                    document.querySelector('#FormConvertWhats').reset()
-        
+
                     
+                    //Envia os dados para o servidor via POST
                     axios.post('/api/convert', dataToSend).then(response => {
                         if(response.data.success){
+
+                            //Reseta os campos do formulário e a fase atual
                             setStatusModal(false)
                             setError("")
+                            document.querySelector('#FormConvertWhats').reset()
+                            setStepModal(0)
                         } else {
                             setError(response.data.message)
                         }
@@ -92,6 +120,7 @@ export default function Whatsapp (props) {
     }
 
 
+    //Retorana o JSX do componente
     return(
         <aside className={`${statusModal ? styles.active : ''} ${styles.aside}`}>
             <div className={styles.contentArea}>
