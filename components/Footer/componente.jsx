@@ -1,12 +1,20 @@
+//Componente para o footer da landing page com logo, informações de contato e redes sociais
+
+//Importando o módulo para a estilização do componente
+import styles from './styles.module.scss'
+
+//importando componentes necessários
 import { faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faPhoneAlt as faPhone } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import styles from './styles.module.scss'
 import Link from 'next/link'
 import logo from './images/logo.png'
 import Image from 'next/image'
 
+//Definindo e exportando o componente
 export default function Footer (props){
+
+    //Retorando o JSX do componente
     return(
         <footer className={styles.footer}>
             <div className={styles.contentArea}>
