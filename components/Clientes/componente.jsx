@@ -1,6 +1,12 @@
+//Componente para mostrar os clientes da emprea
+
+//importando módulo para a estilização do componente
 import styles from './styles.module.scss';
+
+//Importando componentes necessários
 import Image from 'next/image'
 
+//Importando imagens dos clientes
 import aurora from './images/aurora.png'
 import castilhoCia from './images/castilhoCia.png'
 import cordenonsi from './images/cordenonsi.png'
@@ -26,7 +32,10 @@ import tirol from './images/tirol.png'
 import dimensao from './images/dimensao.png'
 import angelLira from './images/angelLira.png'
 
+//Definindo e exportando o componente
 export default function Clientes (props){
+
+    //Retornando o JSX do componente
     return(
         <section className={styles.section}>
             <h2>Quem confia na gente</h2>
