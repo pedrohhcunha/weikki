@@ -78,6 +78,7 @@ export default function Modal(props) {
                     //Zerando os campos do formuláro e fechando o modal
                     document.querySelector('#FormConvert').reset()
                     props.closeModal()
+                    window.location.href = '/obrigado'
                 } else {
                     setErrorMensage(response.message)
                 }
