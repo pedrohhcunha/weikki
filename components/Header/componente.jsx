@@ -1,12 +1,20 @@
-import Link from 'next/link'
+//Componente para o Header da landing page , mosotranso o logo a barra de navegação telefone e CTA
+
+//Importando módulo para a estilização do componente
 import styles from './styles.module.scss'
+
+//Importando componentes necessários
+import Link from 'next/link'
 import logo from './images/logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhoneAlt as faPhone } from '@fortawesome/free-solid-svg-icons'
 import Button from '../Button/componente.jsx'
 import Image from 'next/image'
 
+//Definindo e exportando o componente
 export default function Header(props){
+
+    //Retorando o JSX do componente
     return(
         <header className={styles.header}>
             <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
