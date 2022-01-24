@@ -1,16 +1,26 @@
-import Button from '../Button/componente.jsx'
+//Componnete para mostrar as soluções que a empresa disponibiliza as seus clientes
+
+//Importando o móduo responsável pela estilização do componente
 import styles from './styles.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAvianex } from '@fortawesome/free-brands-svg-icons';
+
+//Importando os componentes necessários
+import Button from '../Button/componente.jsx'
 import Image from 'next/image'
+
+//Importando as imagens presentes nos cards
 import card1 from './images/card1.jpg'
 import card2 from './images/card2.jpg'
 import card3 from './images/card3.jpg'
+
+//Importando os icones presentes nos cards
 import icone1 from './icones/icone1.svg'
 import icone2 from './icones/icone2.svg'
 import icone3 from './icones/icone3.svg'
 
+//Definindo e exportando o componente
 export default function Solucoes (props){
+
+    //Retornando o JSX do componente
     return(
         <section id="solucoes" className={styles.section}>
             <h2>Nossas Soluções</h2>
