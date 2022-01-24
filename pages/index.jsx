@@ -63,6 +63,9 @@ export default function Home() {
           fbq('track', 'PageView');
           `}}>
         </script>
+        <noscript><img height="1" width="1" style="display:none"
+          src="https://www.facebook.com/tr?id=413311417242185&ev=PageView&noscript=1"
+        /></noscript>
       </Head>
       
       <main>
