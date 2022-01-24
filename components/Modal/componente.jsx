@@ -1,19 +1,31 @@
+//Componente para formulário de compra
+
+//Importando módulo para a estilização do componente
+import styles from './styles.module.scss'
+
+//Importando os componentes necessários
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
-import styles from './styles.module.scss'
-import { useState } from 'react'
-import axios from 'axios'
 import InputMask from "react-input-mask";
+import axios from 'axios'
 import { cnpj } from 'cpf-cnpj-validator'; 
 
+//Importando hooks necessários
+import { useState } from 'react'
+
+//Definindo e exportando o componente
 export default function Modal(props) {
 
+    //Criando variável auxiliar paa armazenar a sigla de todos os estados brasileiros
     let states = ['AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS', 'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO']
 
+    //Definindo varia´vel para acumular as mensagens de erro
     const [errorMensage, setErrorMensage] = useState("");
     
+    //Defininfo variável para controle dos produtos de interese do cliente 
     const [listInteresse, setListInteresse] = useState([false, false, false]);
 
+    //Definindo estado para armazzenar os dados do formulário
     const [dataForm, setDataForm] = useState({
         nameInput: "",
         emailInput: "",
@@ -27,19 +39,23 @@ export default function Modal(props) {
         stateInput: ""
     });
 
+    //Criando função para atualizar os dados do formuário semporew que o valor do input for alterado
     const handleInput = event => {
         setDataForm({...dataForm, [event.target.name]: event.target.value})
     }
 
+    //Definindo função a ser executada para enviar os dados a backend
     const submitForm = event => {
+
         event.preventDefault()
+
+        //Validando se o CNPJ é válido
         if(cnpj.isValid(dataForm.cnpjInput.replace('/[^0-9]/', ''))){
 
-            document.querySelector('#FormConvert').reset()
-
-
+            //Criando auxiliar para setar os produtos de interesse do cliente
             let products = ["Uniformes profissionais", "Uniformes executivos", "EPIs"]
 
+            //Padronizando os dados a serem enviados para o backend
             let dataToSend = {
                 "nome": dataForm.nameInput,
                 "email": dataForm.emailInput,
@@ -55,11 +71,12 @@ export default function Modal(props) {
                 "tag": "formulario-de-qualificacao-weikki"
             }
 
-            console.log("Enviando dados:", dataToSend)
-
-
+            //Executando post para o backend
             axios.post('/api/convert', dataToSend).then(response => {
                 if(response.data.success){
+
+                    //Zerando os campos do formuláro e fechando o modal
+                    document.querySelector('#FormConvert').reset()
                     props.closeModal()
                 } else {
                     setErrorMensage(response.message)
@@ -70,6 +87,8 @@ export default function Modal(props) {
         }
     }
 
+
+    //Retorando o JSX do componente
     return(
         <aside className={`${styles.aside} ${props.isActive ? styles.active : ''}`}>
             <div onClick={props.closeModal} className={styles.closeModal}>
