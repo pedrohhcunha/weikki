@@ -1,8 +1,17 @@
-import Typewriter from "typewriter-effect";
+//Componente para a section inicial da landing page 
+
+//Importando módulo para a estilização do componente
 import styles from './styles.module.scss'
+
+//Imoportando componentes necessários
+import Typewriter from "typewriter-effect";
 import Button from "../Button/componente.jsx"
 
+
+//Definindo e exportando o componente
 export default function Inicio(props){
+
+    //Retorando o JSX do componente
     return(
         <section className={styles.section}>
             <h4>
