@@ -1,3 +1,6 @@
+//Página Inicial da landing page
+
+//Impoortando os componentes necessários
 import Head from 'next/head'
 import Header from '../components/Header/componente.jsx'
 import Inicio from '../components/Inicio/componente.jsx'
@@ -10,11 +13,16 @@ import Footer from '../components/Footer/componente.jsx'
 import Modal from '../components/Modal/componente.jsx'
 import Whatsapp from '../components/Whatsapp/componente.jsx'
 
+//Importando os hooks necessários
 import { useEffect, useState } from 'react'
 
+//Definindo e exportando o componente
 export default function Home() {
+
+  //Variável para controlar quandfo o modal está aberto(true) ou fechado(false) 
   const [modalIsActive, setModalIsActive] = useState(false);
 
+  //Adicionando efeito para fechar modal utilizando a tecla ESC
   useEffect(() => {
     window.addEventListener('keydown', event => {
       if(event.key === "Escape") {
@@ -24,6 +32,7 @@ export default function Home() {
   }, []);
 
 
+  //Retornando o JSX do coponente
   return (
     <>
       <Head>
@@ -42,6 +51,7 @@ export default function Home() {
               `}}>
         </script>
       </Head>
+      
       <main>
         <Header openModal={() => setModalIsActive(true)} />
         <Inicio openModal={() => setModalIsActive(true)} />
@@ -51,7 +61,6 @@ export default function Home() {
         <Clientes />
         <Final openModal={() => setModalIsActive(true)}/>
         <Footer />
-
         <Modal isActive={modalIsActive} closeModal={() => setModalIsActive(false)}/>
         <Whatsapp />
       </main>
