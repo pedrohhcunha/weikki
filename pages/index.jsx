@@ -70,6 +70,9 @@ export default function Home() {
         <script dangerouslySetInnerHTML={{__html: `
            window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-10839513675'); 
         `}}></script>
+        <script dangerouslySetInnerHTML={{__html: `
+          function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-10839513675/xP0wCNKom5QDEMu017Ao', 'event_callback': callback }); return false; }
+        `}}></script>
       </Head>
       
       <main>

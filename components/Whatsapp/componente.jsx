@@ -106,6 +106,7 @@ export default function Whatsapp (props) {
                             setError("")
                             document.querySelector('#FormConvertWhats').reset()
                             setStepModal(0)
+                            gtag_report_conversion('https://wa.me/554999019665')
                             window.location.href = 'https://wa.me/554999019665'
                         } else {
                             setError(response.data.message)
