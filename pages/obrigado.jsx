@@ -22,11 +22,10 @@ export default function Obrigado() {
         <>
             <Head>
                 <title>Obrigado | Weikki - Sua melhor escolha em uniformes e EPI&apos;s</title>
-                <script dangerouslySetInnerHTML={{
-                    __html: `
-                    `
-                }}>
-                </script>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10839513675"></script>
+                <script dangerouslySetInnerHTML={{__html: `
+                window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-10839513675'); 
+                `}}></script>
             </Head>
             <main className={styles.main}>
                 <div className={styles.content}>
