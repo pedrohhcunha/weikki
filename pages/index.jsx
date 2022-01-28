@@ -73,6 +73,23 @@ export default function Home() {
         <script dangerouslySetInnerHTML={{__html: `
           function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-10839513675/xP0wCNKom5QDEMu017Ao', 'event_callback': callback }); return false; }
         `}}></script>
+        <script dangerouslySetInnerHTML={{__html: `
+          _linkedin_partner_id = "4156833";
+          window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+          window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+          </script><script type="text/javascript">
+          (function(l) {
+          if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+          window.lintrk.q=[]}
+          var s = document.getElementsByTagName("script")[0];
+          var b = document.createElement("script");
+          b.type = "text/javascript";b.async = true;
+          b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+          s.parentNode.insertBefore(b, s);})(window.lintrk);
+        `}}></script>
+        <noscript>
+          <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=4156833&fmt=gif" />
+        </noscript>
       </Head>
       
       <main>
