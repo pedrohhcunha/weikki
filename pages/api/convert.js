@@ -24,17 +24,17 @@ export default function handler(req, res) {
     let cidade = req.body.cidade
     let estado = req.body.estado
     let telefone = req.body.telefone
-    let cnpj = req.body.cnpj
+    let cnpj = req.body.cnpj.replace(/[^\d]+/g, '')
     let produto_interesse = req.body.produto_interesse
     let quantidadeFuncionarios = req.body.quantidade_funcionarios
     let tag =  req.body.tag
-
+    
+    
     axios.post(process.env.RD_API_URL + '/auth/token',{  
       "client_id": process.env.RD_CLIENT_ID,
       "client_secret": process.env.RD_CLIENT_SECRET,
       "refresh_token": process.env.RD_REFRESH_TOKEN
-    })
-    .then(response => {
+    }).then(response => {
       let access_token = response.data.access_token
       let config = {
         headers: {
@@ -83,7 +83,9 @@ export default function handler(req, res) {
           console.log("=>", error)
         }
       });
-  } else {
+  } 
+  
+  else {
     res.json({
       success: false,
       message: "Metodo não suportado!"
