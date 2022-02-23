@@ -2,6 +2,7 @@ import axios from 'axios';
 
 /** 
 Exemplo de body no request:
+
 {
 	"nome": "Teste",
 	"email": "teste@gmail.com",
@@ -13,6 +14,7 @@ Exemplo de body no request:
   "produto_interesse":["Camisa", "Capacete", ...],
   "quantidade_funcionarios": "10-50"
 }
+
 */
 
 export default function handler(req, res) {
