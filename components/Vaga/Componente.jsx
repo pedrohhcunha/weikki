@@ -18,12 +18,12 @@ export default function Vaga(props) {
     return (
         <div className={styles.vaga}>
             <div onClick={props.openVaga} className={styles.areaImage}>
-                {/* <Image 
+                <Image 
                     src={(process.env.NEXT_PUBLIC_IMG_VAGAS + props.imagem)} 
                     height={600}
                     width={600}
                     alt={"Imagem da vaga"}
-                /> */}
+                />
             </div>
             <h3>{props.title}</h3>
             <DropDiv
