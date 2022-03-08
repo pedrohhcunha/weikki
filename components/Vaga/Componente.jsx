@@ -38,11 +38,7 @@ export default function Vaga(props) {
                 title="Oferecemos"
                 content={props.oferecemos}
             />
-            <Button
-                sizeButton="small"
-                typeButton="principal"
-                actionButton={props.openVaga}
-            >Enviar Currículo</Button>
+            <button className={styles.button} onClick={props.openVaga}>Enviar Currículo</button>
         </div>
     )
 }

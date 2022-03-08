@@ -1,12 +1,13 @@
 
 .vaga{
-    color: var(--azul);
+    color: var(--green);
     margin-bottom: 25px;
     width: 300px;
 
     .areaImage{
         background-color: var(--white);
-       box-shadow: -2px 2px 5px #0000001c;
+        box-shadow: -2px 2px 5px #0000001c;
+        margin-bottom: 10px;
     }
 
     h3{
@@ -18,5 +19,14 @@
         width: 300px;
         height: 300px;
         object-fit: cover;
+    }
+    .button{
+        padding: 0 15px;
+        height: 30px;
+        background-color: var(--green);
+        color: var(--white);
+        font-weight: 700;
+        border: none;
+        border-radius: 0 12.5px 0 12.5px;
     }
 }

@@ -1,0 +1,19 @@
+.main{
+    background-color: var(--white);
+    padding: 100px 10vw;
+    text-align: center;
+
+    h2{
+        font-size: 36px;
+        color: var(--green);
+        margin-bottom: 20px;
+    }
+
+    .vagas{
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-start;
+        justify-content: baseline;
+    }
+}
