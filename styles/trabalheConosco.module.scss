@@ -27,12 +27,31 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s;
 
         .modal{
             background-color: var(--white); 
             border-radius: 0 25px 0 25px;
             padding: 40px;
             box-shadow: -2px 2px 4px #00000016;
+
+            .topArea{
+                display: flex;
+                justify-content: space-between;
+                
+                .titleArea{
+                    height: auto;
+                    font-size: 16px;
+                    color: var(--blue);
+                }
+
+                .iconClose{
+                    color: var(--blue);
+                    cursor: pointer;
+                }
+            }
 
             .areaInputs{
                 width: 100%;
@@ -113,6 +132,11 @@
                     }
                 }
             }
+        }
+
+        &.active{
+            opacity: 1;
+            pointer-events: all
         }
     }
 }
