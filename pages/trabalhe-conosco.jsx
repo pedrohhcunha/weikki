@@ -19,7 +19,7 @@ export default function TrabalheConosco(props){
 
     //Bloquendo scroll quando o modal estiver aberto
     useEffect(() => {
-        axios.post(`${process.env.NEXT_PUBLIC_INTRANET_API}/vagas_septi`, {
+        axios.post(`${process.env.NEXT_PUBLIC_INTRANET_API}/vagas_company`, {
             id: 4
         }).
         then((response) => {
