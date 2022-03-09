@@ -3,19 +3,23 @@ import Vaga from '../components/Vaga/Componente'
 import logo from '../public/images/error.png'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 export default function TrabalheConosco(props){
 
-    const [stateModalVaga, setStateModalVaga] = useState(false);
+    const [stateModalVaga, setStateModalVaga] = useState(0);
 
     const [vagasSepti, setVagasSepti] = useState([{
         id: 0,
         imagem_url: "tania.png",
-        titulo: "",
+        titulo: "Nome da vaga",
         responsabilidades: "",
         requisitos: "",
         beneficios: ""
     }])
+
+    const [vagaAtual, setVagaAtual] = useState(undefined);
 
     //Bloquendo scroll quando o modal estiver aberto
     useEffect(() => {
@@ -53,8 +57,12 @@ export default function TrabalheConosco(props){
                     ))
                 : null}
             </div>
-            <aside className={styles.modalVaga}>
+            <aside className={`${styles.modalVaga} ${stateModalVaga ? styles.active : null}`}>
                 <form className={styles.modal}>
+                    <div className={styles.topArea}>
+                        <h2 className={styles.titleArea}>{vagasSepti[vagaAtual]?.titulo}</h2>
+                        <FontAwesomeIcon icon={faTimes} className={styles.iconClose} onClick={() => setStateModalVaga(false)}/>
+                    </div>
                     <div className={styles.areaInputs}>
                         <div className={styles.areaInput}>
                             <label className={styles.label} htmlFor="nameInput">Nome*</label>
