@@ -1,6 +1,5 @@
 import styles from '../styles/trabalheConosco.module.scss'
 import Vaga from '../components/Vaga/Componente'
-import logo from '../public/images/error.png'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -19,21 +18,45 @@ export default function TrabalheConosco(props){
         beneficios: ""
     }])
 
-    const [vagaAtual, setVagaAtual] = useState(undefined);
+    const [vagaAtual, setVagaAtual] = useState(0);
 
     const [newVaga, setNewVaga] = useState({
         name: '',
         email: '',
         message: '',
-        curriculum: ''
     });
 
-    const sendJobSubmit = event => {
-        event.preventDefault();
+    const sendForm = event => {
+        event.preventDefault()
+        
+        var finalData = new FormData();
+        var imagefile = document.querySelector('#curriculum');
+        
+        finalData.append("image", imagefile.files[0]);
+        finalData.append("nome", newVaga.name)
+        finalData.append("email", newVaga.email)
+        finalData.append("mensagem", newVaga.message)
+        finalData.append("vaga", vagaAtual)
 
-        console.log("Dados a serem enviados: ", newVaga)
+        axios({
+            method: 'post',
+            url: `${process.env.NEXT_PUBLIC_INTRANET_API}/receive_curriculo`,
+            data: finalData
+        },{headers: { 'Content-Type': 'multipart/form-data' }}).then(response => {
+            document.querySelector('#FormVaga').reset()
+            
+            setNewVaga({
+                nome: "",
+                email: "",
+                mensagem: "",
+                file: {},
+                vaga: props.vagaId
+            })
+
+            setStateModalVaga(false)
+        })
     }
-
+    
     //Bloquendo scroll quando o modal estiver aberto
     useEffect(() => {
         axios.post(`${process.env.NEXT_PUBLIC_INTRANET_API}/vagas_company`, {
@@ -41,6 +64,7 @@ export default function TrabalheConosco(props){
         }).
         then((response) => {
             setVagasSepti(response.data)
+            console.log("Response data:", response.data)
         })
         if(stateModalVaga){
             document.querySelector('body').style.overflow = 'hidden'
@@ -71,9 +95,9 @@ export default function TrabalheConosco(props){
                 : null}
             </div>
             <aside className={`${styles.modalVaga} ${stateModalVaga ? styles.active : null}`}>
-                <form onSubmit={sendJobSubmit} className={styles.modal}>
+                <form id="FormVaga" onSubmit={sendForm} className={styles.modal}>
                     <div className={styles.topArea}>
-                        <h2 className={styles.titleArea}>{vagasSepti[vagaAtual]?.titulo}</h2>
+                        <h2 className={styles.titleArea}>{vagasSepti.find(vaga => vaga.id === vagaAtual).titulo}</h2>
                         <FontAwesomeIcon icon={faTimes} className={styles.iconClose} onClick={() => setStateModalVaga(false)}/>
                     </div>
                     <div className={styles.areaInputs}>
@@ -91,9 +115,10 @@ export default function TrabalheConosco(props){
                         </div>
                         <div className={styles.areaInput}>
                             <label className={styles.label} htmlFor="nameInput">Seu curriculum</label>
-                            <div className={styles.areaDragInDrop}>
-                                Solte um arquivo ou busque do seu dispositivo                                
-                            </div>
+                            <label htmlFor='curriculum' className={styles.areaDragInDrop}>
+                                Busque o curriculum no seu dispositivo                                
+                            </label>
+                            <input style={{display: 'none'}} type="file" id="curriculum" name="curriculum" />
                         </div>
                     </div>
                     <div className={styles.controllersArea}>

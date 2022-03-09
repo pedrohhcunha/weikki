@@ -28,5 +28,12 @@
         font-weight: 700;
         border: none;
         border-radius: 0 12.5px 0 12.5px;
+        cursor: pointer;
+        transition: all .3s;
+
+        &:hover{
+            filter: brightness(.9);
+            transform: translateY(-5px);
+        }
     }
 }
