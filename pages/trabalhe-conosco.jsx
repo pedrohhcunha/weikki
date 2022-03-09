@@ -52,6 +52,34 @@ export default function TrabalheConosco(props){
                     ))
                 : null}
             </div>
+            <aside className={styles.modalVaga}>
+                <form className={styles.modal}>
+                    <div className={styles.areaInputs}>
+                        <div className={styles.areaInput}>
+                            <label className={styles.label} htmlFor="nameInput">Nome*</label>
+                            <input required className={styles.input} name="nameInput" type="text" />
+                        </div>
+                        <div className={styles.areaInput}>
+                            <label className={styles.label} htmlFor="nameInput">Email*</label>
+                            <input required className={styles.input} name="emailInput" type="email" />
+                        </div>
+                        <div className={styles.areaInput}>
+                            <label className={styles.label} htmlFor="nameInput">Sua mensagem</label>
+                            <textarea required className={styles.input} style={{padding: '10px', minHeight: '100px', resize: 'none'}}  name="nameInput" type="text" />
+                        </div>
+                        <div className={styles.areaInput}>
+                            <label className={styles.label} htmlFor="nameInput">Seu curriculum</label>
+                            <div className={styles.areaDragInDrop}>
+                                Solte um arquivo ou busque do seu dispositivo                                
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.controllersArea}>
+                        <button className={styles.button}>Cancelar</button>
+                        <button className={styles.button}>Enviar</button>
+                    </div>
+                </form>
+            </aside>
         </main>
     )
 }
