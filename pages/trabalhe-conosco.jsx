@@ -21,6 +21,19 @@ export default function TrabalheConosco(props){
 
     const [vagaAtual, setVagaAtual] = useState(undefined);
 
+    const [newVaga, setNewVaga] = useState({
+        name: '',
+        email: '',
+        message: '',
+        curriculum: ''
+    });
+
+    const sendJobSubmit = event => {
+        event.preventDefault();
+
+        console.log("Dados a serem enviados: ", newVaga)
+    }
+
     //Bloquendo scroll quando o modal estiver aberto
     useEffect(() => {
         axios.post(`${process.env.NEXT_PUBLIC_INTRANET_API}/vagas_company`, {
@@ -58,7 +71,7 @@ export default function TrabalheConosco(props){
                 : null}
             </div>
             <aside className={`${styles.modalVaga} ${stateModalVaga ? styles.active : null}`}>
-                <form className={styles.modal}>
+                <form onSubmit={sendJobSubmit} className={styles.modal}>
                     <div className={styles.topArea}>
                         <h2 className={styles.titleArea}>{vagasSepti[vagaAtual]?.titulo}</h2>
                         <FontAwesomeIcon icon={faTimes} className={styles.iconClose} onClick={() => setStateModalVaga(false)}/>
@@ -66,15 +79,15 @@ export default function TrabalheConosco(props){
                     <div className={styles.areaInputs}>
                         <div className={styles.areaInput}>
                             <label className={styles.label} htmlFor="nameInput">Nome*</label>
-                            <input required className={styles.input} name="nameInput" type="text" />
+                            <input value={newVaga.name} onChange={event => setNewVaga({...newVaga, ['name']: event.target.value})} required className={styles.input} name="nameInput" type="text" />
                         </div>
                         <div className={styles.areaInput}>
                             <label className={styles.label} htmlFor="nameInput">Email*</label>
-                            <input required className={styles.input} name="emailInputx" type="email" />
+                            <input value={newVaga.email} onChange={event => setNewVaga({...newVaga, ['email']: event.target.value})} required className={styles.input} name="emailInputx" type="email" />
                         </div>
                         <div className={styles.areaInput}>
                             <label className={styles.label} htmlFor="nameInput">Sua mensagem</label>
-                            <textarea required className={styles.input} style={{padding: '10px', minHeight: '100px', resize: 'none'}}  name="nameInput" type="text" />
+                            <textarea valeu={newVaga.message} onChange={event => setNewVaga({...newVaga, ['message']: event.target.value})} required className={styles.input} style={{padding: '10px', minHeight: '100px', resize: 'none'}}  name="nameInput" type="text" />
                         </div>
                         <div className={styles.areaInput}>
                             <label className={styles.label} htmlFor="nameInput">Seu curriculum</label>
@@ -84,8 +97,8 @@ export default function TrabalheConosco(props){
                         </div>
                     </div>
                     <div className={styles.controllersArea}>
-                        <button className={styles.button}>Cancelar</button>
-                        <button className={styles.button}>Enviar</button>
+                        <button onClick={() => setStateModalVaga(false)} className={styles.button}>Cancelar</button>
+                        <button type="submit" className={styles.button}>Enviar</button>
                     </div>
                 </form>
             </aside>
