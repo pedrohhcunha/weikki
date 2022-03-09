@@ -37,8 +37,9 @@ export default function TrabalheConosco(props){
             <h2>Trabalhe Conosco</h2>
             <div className={styles.vagas}>
                 {vagasSepti.length >= 1 ?
-                    vagasSepti.map(vaga => (
+                    vagasSepti.map((vaga, index) => (
                         <Vaga
+                            key={index}
                             imagem={vaga.imagem_url}
                             title={vaga.titulo}
                             responsabilidades={vaga.responsabilidades}
@@ -61,7 +62,7 @@ export default function TrabalheConosco(props){
                         </div>
                         <div className={styles.areaInput}>
                             <label className={styles.label} htmlFor="nameInput">Email*</label>
-                            <input required className={styles.input} name="emailInput" type="email" />
+                            <input required className={styles.input} name="emailInputx" type="email" />
                         </div>
                         <div className={styles.areaInput}>
                             <label className={styles.label} htmlFor="nameInput">Sua mensagem</label>
