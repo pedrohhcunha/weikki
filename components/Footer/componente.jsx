@@ -41,6 +41,9 @@ export default function Footer (props){
                         <FontAwesomeIcon className={styles.icon} icon={faEnvelope} />
                         <span>weikki@weikki.com.br</span>
                     </div>
+                    <button onClick={() => {
+                        window.location.href = 'https://www.weikki.com.br/trabalhe-conosco'
+                    }}>Trabalhe conosco</button>
                 </div>
                 <div className={styles.areaRedes}>
                     <Link href="https://www.facebook.com/weikki/" target="_blank">
