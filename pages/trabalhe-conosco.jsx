@@ -11,14 +11,7 @@ export default function TrabalheConosco(props){
 
     const [stateModalVaga, setStateModalVaga] = useState(0);
 
-    const [vagasSepti, setVagasSepti] = useState([{
-        id: 0,
-        imagem_url: "tania.png",
-        titulo: "Nome da vaga",
-        responsabilidades: "",
-        requisitos: "",
-        beneficios: ""
-    }])
+    const [vagasSepti, setVagasSepti] = useState([])
 
     const [vagaAtual, setVagaAtual] = useState(0);
 
