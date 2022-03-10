@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import Footer from '../components/Footer/componente'
 import Header from '../components/Header/componente'
+import Head from 'next/head'
 
 export default function TrabalheConosco(props){
 
