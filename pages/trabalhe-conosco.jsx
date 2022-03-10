@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import Footer from '../components/Footer/componente'
+import Header from '../components/Header/componente'
 
 export default function TrabalheConosco(props){
 
@@ -74,59 +76,66 @@ export default function TrabalheConosco(props){
     }, [stateModalVaga]);
 
     return(
-        <main className={styles.main}>
-            <h2>Trabalhe Conosco</h2>
-            <div className={styles.vagas}>
+        <>
+        <Header />
+            <main className={styles.main}>
+                <h2>Trabalhe Conosco</h2>
+                <div className={styles.vagas}>
+                    {vagasSepti.length >= 1 ?
+                        vagasSepti.map((vaga, index) => (
+                            <Vaga
+                                key={index}
+                                imagem={vaga.imagem_url}
+                                title={vaga.titulo}
+                                responsabilidades={vaga.responsabilidades}
+                                requisitos={vaga.requisitos}
+                                oferecemos={vaga.beneficios}
+                                openVaga={() => {
+                                    setVagaAtual(vaga.id)
+                                    setStateModalVaga(true)
+                                }}
+                            />  
+                        ))
+                    : null
+                    }
+                </div>
                 {vagasSepti.length >= 1 ?
-                    vagasSepti.map((vaga, index) => (
-                        <Vaga
-                            key={index}
-                            imagem={vaga.imagem_url}
-                            title={vaga.titulo}
-                            responsabilidades={vaga.responsabilidades}
-                            requisitos={vaga.requisitos}
-                            oferecemos={vaga.beneficios}
-                            openVaga={() => {
-                                setVagaAtual(vaga.id)
-                                setStateModalVaga(true)
-                            }}
-                        />  
-                    ))
+                    <aside className={`${styles.modalVaga} ${stateModalVaga ? styles.active : null}`}>
+                        <form id="FormVaga" onSubmit={sendForm} className={styles.modal}>
+                            <div className={styles.topArea}>
+                                <h2 className={styles.titleArea}>{vagasSepti.find(vaga => vaga.id === vagaAtual).titulo}</h2>
+                                <FontAwesomeIcon icon={faTimes} className={styles.iconClose} onClick={() => setStateModalVaga(false)}/>
+                            </div>
+                            <div className={styles.areaInputs}>
+                                <div className={styles.areaInput}>
+                                    <label className={styles.label} htmlFor="nameInput">Nome*</label>
+                                    <input value={newVaga.name} onChange={event => setNewVaga({...newVaga, ['name']: event.target.value})} required className={styles.input} name="nameInput" type="text" />
+                                </div>
+                                <div className={styles.areaInput}>
+                                    <label className={styles.label} htmlFor="nameInput">Email*</label>
+                                    <input value={newVaga.email} onChange={event => setNewVaga({...newVaga, ['email']: event.target.value})} required className={styles.input} name="emailInputx" type="email" />
+                                </div>
+                                <div className={styles.areaInput}>
+                                    <label className={styles.label} htmlFor="nameInput">Sua mensagem</label>
+                                    <textarea valeu={newVaga.message} onChange={event => setNewVaga({...newVaga, ['message']: event.target.value})} required className={styles.input} style={{padding: '10px', minHeight: '100px', resize: 'none'}}  name="nameInput" type="text" />
+                                </div>
+                                <div className={styles.areaInput}>
+                                    <label className={styles.label} htmlFor="nameInput">Seu curriculum</label>
+                                    <label htmlFor='curriculum' className={styles.areaDragInDrop}>
+                                        Busque o curriculum no seu dispositivo                                
+                                    </label>
+                                    <input style={{display: 'none'}} type="file" id="curriculum" name="curriculum" />
+                                </div>
+                            </div>
+                            <div className={styles.controllersArea}>
+                                <button onClick={() => setStateModalVaga(false)} className={styles.button}>Cancelar</button>
+                                <button type="submit" className={styles.button}>Enviar</button>
+                            </div>
+                        </form>
+                    </aside>
                 : null}
-            </div>
-            <aside className={`${styles.modalVaga} ${stateModalVaga ? styles.active : null}`}>
-                <form id="FormVaga" onSubmit={sendForm} className={styles.modal}>
-                    <div className={styles.topArea}>
-                        <h2 className={styles.titleArea}>{vagasSepti.find(vaga => vaga.id === vagaAtual).titulo}</h2>
-                        <FontAwesomeIcon icon={faTimes} className={styles.iconClose} onClick={() => setStateModalVaga(false)}/>
-                    </div>
-                    <div className={styles.areaInputs}>
-                        <div className={styles.areaInput}>
-                            <label className={styles.label} htmlFor="nameInput">Nome*</label>
-                            <input value={newVaga.name} onChange={event => setNewVaga({...newVaga, ['name']: event.target.value})} required className={styles.input} name="nameInput" type="text" />
-                        </div>
-                        <div className={styles.areaInput}>
-                            <label className={styles.label} htmlFor="nameInput">Email*</label>
-                            <input value={newVaga.email} onChange={event => setNewVaga({...newVaga, ['email']: event.target.value})} required className={styles.input} name="emailInputx" type="email" />
-                        </div>
-                        <div className={styles.areaInput}>
-                            <label className={styles.label} htmlFor="nameInput">Sua mensagem</label>
-                            <textarea valeu={newVaga.message} onChange={event => setNewVaga({...newVaga, ['message']: event.target.value})} required className={styles.input} style={{padding: '10px', minHeight: '100px', resize: 'none'}}  name="nameInput" type="text" />
-                        </div>
-                        <div className={styles.areaInput}>
-                            <label className={styles.label} htmlFor="nameInput">Seu curriculum</label>
-                            <label htmlFor='curriculum' className={styles.areaDragInDrop}>
-                                Busque o curriculum no seu dispositivo                                
-                            </label>
-                            <input style={{display: 'none'}} type="file" id="curriculum" name="curriculum" />
-                        </div>
-                    </div>
-                    <div className={styles.controllersArea}>
-                        <button onClick={() => setStateModalVaga(false)} className={styles.button}>Cancelar</button>
-                        <button type="submit" className={styles.button}>Enviar</button>
-                    </div>
-                </form>
-            </aside>
-        </main>
+            </main>
+            <Footer />
+        </>
     )
 }
