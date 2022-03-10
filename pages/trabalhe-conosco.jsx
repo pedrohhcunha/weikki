@@ -70,6 +70,9 @@ export default function TrabalheConosco(props){
 
     return(
         <>
+        <Head>
+            <title>Trabalhe Conosco - Weikki</title>
+        </Head>
         <Header />
             <main className={styles.main}>
                 <h2>Trabalhe Conosco</h2>
