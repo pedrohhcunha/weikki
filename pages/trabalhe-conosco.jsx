@@ -78,13 +78,13 @@ export default function TrabalheConosco(props){
                         vagasSepti.map((vaga, index) => (
                             <Vaga
                                 key={index}
-                                imagem={vaga.imagem_url}
-                                title={vaga.titulo}
-                                responsabilidades={vaga.responsabilidades}
-                                requisitos={vaga.requisitos}
-                                oferecemos={vaga.beneficios}
+                                imagem={vaga?.imagem_url}
+                                title={vaga?.titulo}
+                                responsabilidades={vaga?.responsabilidades}
+                                requisitos={vaga?.requisitos}
+                                oferecemos={vaga?.beneficios}
                                 openVaga={() => {
-                                    setVagaAtual(vaga.id)
+                                    setVagaAtual(vaga?.id)
                                     setStateModalVaga(true)
                                 }}
                             />  
@@ -96,7 +96,7 @@ export default function TrabalheConosco(props){
                     <aside className={`${styles.modalVaga} ${stateModalVaga ? styles.active : null}`}>
                         <form id="FormVaga" onSubmit={sendForm} className={styles.modal}>
                             <div className={styles.topArea}>
-                                <h2 className={styles.titleArea}>{vagasSepti.find(vaga => vaga.id === vagaAtual).titulo}</h2>
+                                <h2 className={styles.titleArea}>{vagasSepti.find(vaga => vaga.id === vagaAtual)?.titulo}</h2>
                                 <FontAwesomeIcon icon={faTimes} className={styles.iconClose} onClick={() => setStateModalVaga(false)}/>
                             </div>
                             <div className={styles.areaInputs}>
