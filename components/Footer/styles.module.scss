@@ -38,21 +38,27 @@
                 }
             }
 
-            button{
-                height: 30px;
-                padding: 0 10px;
-                color: var(--white);
-                border-radius: 5px;
-                background-color: var(--blue);
-                cursor: pointer;
-                border-radius: 0 12.5px 0 12.5px;
-                border: none;
-                transition: all .3s;
+            .areaButton{
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
-                &:hover{
-                    filter: brightness(.9);
-                    box-shadow: -2px 2px 4px #00000022;
-                    transform: translateY(-5px)
+                button{
+                    height: 30px;
+                    padding: 0 10px;
+                    color: var(--white);
+                    border-radius: 5px;
+                    background-color: var(--blue);
+                    cursor: pointer;
+                    border-radius: 0 12.5px 0 12.5px;
+                    border: none;
+                    transition: all .3s;
+    
+                    &:hover{
+                        filter: brightness(.9);
+                        box-shadow: -2px 2px 4px #00000022;
+                        transform: translateY(-5px)
+                    }
                 }
             }
         }
@@ -123,6 +129,12 @@
                     width: 100%;
                     margin: 10px 0;
                     justify-content: flex-start;
+                }
+
+                .areaButton{
+                    width: 100%;
+                    justify-content: flex-start;
+                    margin-top: 10px;
                 }
             }
         }
