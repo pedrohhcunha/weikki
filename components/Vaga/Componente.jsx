@@ -19,7 +19,7 @@ export default function Vaga(props) {
         <div className={styles.vaga}>
             <div onClick={props.openVaga} className={styles.areaImage}>
                 <Image 
-                    src={(process.env.NEXT_PUBLIC_IMG_VAGAS + props.imagem)} 
+                    src={process.env.NEXT_PUBLIC_IMG_VAGAS + props.imagem} 
                     height={600}
                     width={600}
                     alt={"Imagem da vaga"}

@@ -24,9 +24,9 @@ export default function Header(props){
             <div className={styles.rightArea}>
                 <nav className={styles.nav}>
                     <ul className={styles.ul}>
-                        <li className={styles.item}><Link href="#a-weikki"><a>A Weikki</a></Link></li>
-                        <li className={styles.item}><Link href="#solucoes"><a>Soluções</a></Link></li>
-                        <li className={styles.item}><Link href="#diferenciais"><a>Diferenciais</a></Link></li>
+                        <li className={styles.item}><Link href="https://www.weikki.com.br/#a-weikki"><a>A Weikki</a></Link></li>
+                        <li className={styles.item}><Link href="https://www.weikki.com.br/#solucoes"><a>Soluções</a></Link></li>
+                        <li className={styles.item}><Link href="https://www.weikki.com.br/#diferenciais"><a>Diferenciais</a></Link></li>
                     </ul>
                 </nav>
                 <div className={styles.buttons}>
