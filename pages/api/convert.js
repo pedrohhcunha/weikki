@@ -31,9 +31,9 @@ export default function handler(req, res) {
     let quantidadeFuncionarios = req.body.quantidade_funcionarios
     let tag =  req.body.tag
     
-    let utm_source = req.query.utm_source || 'utm_source'
+    let utm_source = req.query.utm_source || 'Weikki'
     let utm_medium = req.query.utm_medium || 'organic'
-    let utm_campaign = req.query.utm_campaign || 'utm_campaign'
+    let utm_campaign = req.query.utm_campaign || 'none'
     
     console.log("utm_source: " + utm_source)
     console.log("utm_medium: " + utm_medium)
