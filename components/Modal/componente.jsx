@@ -83,8 +83,12 @@ export default function Modal(props) {
                             '&utm_campaign=' + (utm_campaign ? utm_campaign : 'utm_campaign')
             }
 
+            if(window.location.href.indexOf("gclid") != -1) {
+                url_dest += '?utm_medium=cpc&utm_campaign=gclid&utm_source=Google'
+            }
+
             //Executando post para o backend
-            console.log("Desto url:", url_dest)
+            console.log("Dest url:", url_dest)
             axios.post(url_dest, dataToSend).then(response => {
                 if(response.data.success){
 

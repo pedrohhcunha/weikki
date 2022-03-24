@@ -107,6 +107,12 @@ export default function Whatsapp (props) {
                                     '&utm_medium=' + (utm_medium ? utm_medium : 'Weikki - evento de conversão') + 
                                     '&utm_campaign=' + (utm_campaign ? utm_campaign : 'utm_campaign')
                     }
+
+                    if(window.location.href.indexOf("gclid") != -1) {
+                        let gclid = window.location.href.split('gclid')[1].split('&')[0].split('=')[1]
+                        url_dest += '?gclid=' + (gclid ? gclid : 'gclid')
+                        url_dest += '?utm_medium=cpc'
+                    }
                     
                     //Envia os dados para o servidor via POST
                     console.log("Desto url:", url_dest)
