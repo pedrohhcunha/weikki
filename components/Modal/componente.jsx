@@ -71,8 +71,21 @@ export default function Modal(props) {
                 "tag": "formulario-de-qualificacao-weikki"
             }
 
+            let url_dest = '/api/convert'
+
+            if(window.location.href.indexOf("utm_source") != -1) {
+                let utm_source = window.location.href.split('utm_source')[1].split('&')[0].split('=')[1]
+                let utm_medium = window.location.href.split('utm_medium')[1].split('&')[0].split('=')[1]
+                let utm_campaign = window.location.href.split('utm_campaign')[1].split('&')[0].split('=')[1]
+
+                url_dest += '?utm_source=' + (utm_source ? utm_source : 'utm_source') + 
+                            '&utm_medium=' + (utm_medium ? utm_medium : 'Weikki - evento de conversão') + 
+                            '&utm_campaign=' + (utm_campaign ? utm_campaign : 'utm_campaign')
+            }
+
             //Executando post para o backend
-            axios.post('/api/convert', dataToSend).then(response => {
+            console.log("Desto url:", url_dest)
+            axios.post(url_dest, dataToSend).then(response => {
                 if(response.data.success){
 
                     //Zerando os campos do formuláro e fechando o modal

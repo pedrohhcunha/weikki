@@ -39,6 +39,7 @@ export default function Home() {
         <title>Weikki | Sua melhor escolha em uniformes e EPI&apos;s</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="facebook-domain-verification" content="2tvzs8l0f00vthterv5hopcb37jyza" />
+        
         <script dangerouslySetInnerHTML={{__html: `
              (function(h,o,t,j,a,r){
               h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -50,6 +51,7 @@ export default function Home() {
               })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
           `}}>
         </script>
+
         <script dangerouslySetInnerHTML={{__html: `
           !function(f,b,e,v,n,t,s)
           {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -63,17 +65,21 @@ export default function Home() {
           fbq('track', 'PageView');
           `}}>
         </script>
+
         <noscript><img height="1" width="1" style={{display: 'none'}}
           src="https://www.facebook.com/tr?id=413311417242185&ev=PageView&noscript=1"
         /></noscript>
+        
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10839513675"></script>
+
         <script dangerouslySetInnerHTML={{__html: `
            window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-10839513675'); 
         `}}></script>
+
         <script dangerouslySetInnerHTML={{__html: `
           function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-10839513675/xP0wCNKom5QDEMu017Ao', 'event_callback': callback }); return false; }
         `}}></script>
-
+      
         <script dangerouslySetInnerHTML={{__html: `
           _linkedin_partner_id = "4156833";
           window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
@@ -88,6 +94,7 @@ export default function Home() {
           b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
           s.parentNode.insertBefore(b, s);})(window.lintrk);
         `}}></script>
+
         <noscript>
           <img height="1" width="1" style={{display: 'none'}} alt="" src="https://px.ads.linkedin.com/collect/?pid=4156833&fmt=gif" />
         </noscript>

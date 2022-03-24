@@ -96,9 +96,21 @@ export default function Whatsapp (props) {
                         "tag": "formulario-de-qualificacao-weikki-whatsapp"
                     }
 
+                    let url_dest = '/api/convert'
+
+                    if(window.location.href.indexOf("utm_source") != -1) {
+                        let utm_source = window.location.href.split('utm_source')[1].split('&')[0].split('=')[1]
+                        let utm_medium = window.location.href.split('utm_medium')[1].split('&')[0].split('=')[1]
+                        let utm_campaign = window.location.href.split('utm_campaign')[1].split('&')[0].split('=')[1]
+
+                        url_dest += '?utm_source=' + (utm_source ? utm_source : 'utm_source') + 
+                                    '&utm_medium=' + (utm_medium ? utm_medium : 'Weikki - evento de conversão') + 
+                                    '&utm_campaign=' + (utm_campaign ? utm_campaign : 'utm_campaign')
+                    }
                     
                     //Envia os dados para o servidor via POST
-                    axios.post('/api/convert', dataToSend).then(response => {
+                    console.log("Desto url:", url_dest)
+                    axios.post(url_dest, dataToSend).then(response => {
                         if(response.data.success){
 
                             //Reseta os campos do formulário e a fase atual
