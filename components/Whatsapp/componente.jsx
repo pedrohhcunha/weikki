@@ -113,7 +113,6 @@ export default function Whatsapp (props) {
                     }
                     
                     //Envia os dados para o servidor via POST
-                    console.log("Desto url:", url_dest)
                     axios.post(url_dest, dataToSend).then(response => {
                         if(response.data.success){
 

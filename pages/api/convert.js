@@ -33,7 +33,7 @@ export default function handler(req, res) {
     
     let utm_source = req.query.utm_source || 'Weikki'
     let utm_medium = req.query.utm_medium || 'organic'
-    let utm_campaign = req.query.utm_campaign || 'none'
+    let utm_campaign = req.query.utm_campaign || 'busca-orgânica'
 
     console.log("utm_source: " + utm_source)
     console.log("utm_medium: " + utm_medium)
@@ -61,7 +61,7 @@ export default function handler(req, res) {
           "email": email,
           "traffic_source": utm_source,
           "traffic_medium": utm_medium,
-          "traffic_medium": utm_campaign,
+          "traffic_campaign": utm_campaign,
           "company_name": empresa,
           "state": estado,
           "city": cidade,
