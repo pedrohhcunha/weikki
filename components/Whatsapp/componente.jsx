@@ -102,16 +102,14 @@ export default function Whatsapp (props) {
                         let utm_source = window.location.href.split('utm_source')[1].split('&')[0].split('=')[1]
                         let utm_medium = window.location.href.split('utm_medium')[1].split('&')[0].split('=')[1]
                         let utm_campaign = window.location.href.split('utm_campaign')[1].split('&')[0].split('=')[1]
-
+        
                         url_dest += '?utm_source=' + (utm_source ? utm_source : 'utm_source') + 
                                     '&utm_medium=' + (utm_medium ? utm_medium : 'Weikki - evento de conversão') + 
                                     '&utm_campaign=' + (utm_campaign ? utm_campaign : 'utm_campaign')
                     }
-
+        
                     if(window.location.href.indexOf("gclid") != -1) {
-                        let gclid = window.location.href.split('gclid')[1].split('&')[0].split('=')[1]
-                        url_dest += '?gclid=' + (gclid ? gclid : 'gclid')
-                        url_dest += '?utm_medium=cpc'
+                        url_dest += '?utm_medium=cpc&utm_campaign=gclid&utm_source=Google'
                     }
                     
                     //Envia os dados para o servidor via POST
