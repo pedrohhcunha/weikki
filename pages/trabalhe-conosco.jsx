@@ -60,8 +60,10 @@ export default function TrabalheConosco(props){
         }).
         then((response) => {
             setVagasSepti(response.data)
-            console.log("Response data:", response.data)
         })
+    }, []);
+
+    useEffect(() => {
         if(stateModalVaga){
             document.querySelector('body').style.overflow = 'hidden'
         } else {
@@ -119,9 +121,12 @@ export default function TrabalheConosco(props){
                                 <div className={styles.areaInput}>
                                     <label className={styles.label} htmlFor="nameInput">Seu curriculum</label>
                                     <label htmlFor='curriculum' className={styles.areaDragInDrop}>
-                                        Busque o curriculum no seu dispositivo                                
+                                        {newVaga.file ? newVaga.file.name : 'Busque o curriculum no seu dispositivo  '}
                                     </label>
-                                    <input style={{display: 'none'}} type="file" id="curriculum" name="curriculum" />
+                                    <input onChange={event => {
+                                        console.log("Adicionou aquele arquivo:", event.target.files[0])
+                                        setNewVaga({...newVaga, ['file']: event.target.files[0]})
+                                    }} style={{display: 'none'}} type="file" id="curriculum" name="curriculum" />
                                 </div>
                             </div>
                             <div className={styles.controllersArea}>
