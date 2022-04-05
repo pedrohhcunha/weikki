@@ -108,6 +108,11 @@
                         &:hover{
                             background-color: rgba(175, 175, 175, 0.315);
                         }
+
+                        &.active{
+                            color: var(--green);
+                            border: 2px dotted var(--green);
+                        }
                     }
                 }
             }

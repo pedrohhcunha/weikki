@@ -120,7 +120,7 @@ export default function TrabalheConosco(props){
                                 </div>
                                 <div className={styles.areaInput}>
                                     <label className={styles.label} htmlFor="nameInput">Seu curriculum</label>
-                                    <label htmlFor='curriculum' className={styles.areaDragInDrop}>
+                                    <label htmlFor='curriculum' className={`${styles.areaDragInDrop} ${newVaga.file ? styles.active : ''}`}>
                                         {newVaga.file ? newVaga.file.name : 'Busque o curriculum no seu dispositivo  '}
                                     </label>
                                     <input onChange={event => {
