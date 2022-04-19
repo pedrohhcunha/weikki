@@ -51,7 +51,6 @@ export default function Whatsapp (props) {
         setDataForm({...dataForm, [event.target.name]: event.target.value});
     }
 
-
     //Definindo a função a ser executado quando for clicado no botão "Avançar" ou "Enviar"
     const submitForm = event => {
         event.preventDefault();
@@ -136,11 +135,16 @@ export default function Whatsapp (props) {
         }
     }
 
+    const [modalInHover, setModalInHover] = useState(false);
 
     //Retorana o JSX do componente
     return(
-        <aside className={`${statusModal ? styles.active : ''} ${styles.aside}`}>
-            <div className={styles.contentArea}>
+        <aside className={`${statusModal ? styles.active : ''} ${styles.aside}`} onClick={() => {
+            if(!modalInHover){
+                setStatusModal(false)
+            }
+        }}>
+            <div className={styles.contentArea} onMouseEnter={() => setModalInHover(true)} onMouseLeave={() => setModalInHover(false)}>
                 <form id="FormConvertWhats" onSubmit={event => submitForm(event)} className={styles.form}>
                     <header className={styles.headerForm}>
                         <h2 className={styles.title}>Olá! Preencha os campos abaixo para iniciar a conversa no whatsapp.</h2>
