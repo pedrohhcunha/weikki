@@ -105,11 +105,16 @@ export default function Modal(props) {
         }
     }
 
+    const [modalInHover, setModalInHover] = useState(false);
 
     //Retorando o JSX do componente
     return(
-        <aside className={`${styles.aside} ${props.isActive ? styles.active : ''}`}>
-            <form id="FormConvert" onSubmit={event => submitForm(event)} className={styles.areaModal}>
+        <aside className={`${styles.aside} ${props.isActive ? styles.active : ''}`} onClick={() => {
+            if(!modalInHover){
+                props.closeModal()
+            }
+        }}>
+            <form id="FormConvert" onSubmit={event => submitForm(event)} className={styles.areaModal} onMouseEnter={() => setModalInHover(true)} onMouseLeave={() => setModalInHover(false)}>
                 <h2 className={styles.title}>Entre em contato</h2>
                 <div onClick={props.closeModal} className={styles.closeModal}>
                     <FontAwesomeIcon className={styles.icon} icon={faTimes} />
