@@ -109,11 +109,11 @@ export default function Modal(props) {
     //Retorando o JSX do componente
     return(
         <aside className={`${styles.aside} ${props.isActive ? styles.active : ''}`}>
-            <div onClick={props.closeModal} className={styles.closeModal}>
-                <FontAwesomeIcon className={styles.icon} icon={faTimes} />
-            </div>
             <form id="FormConvert" onSubmit={event => submitForm(event)} className={styles.areaModal}>
                 <h2 className={styles.title}>Entre em contato</h2>
+                <div onClick={props.closeModal} className={styles.closeModal}>
+                    <FontAwesomeIcon className={styles.icon} icon={faTimes} />
+                </div>
                 <div className={styles.inputsGroup}>
                     <div className={styles.areaInput}>
                         <label className={styles.label} htmlFor="nameInput">Nome*</label>

@@ -13,42 +13,25 @@
     pointer-events: none;
     transition: .3s;
 
-    .closeModal{
-        position: fixed;
-        top: 50px;
-        right: 50px;
-        width: 50px;
-        height: 50px;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        background: linear-gradient(76deg, #ffffff52, #ffffff52);
-        padding: 5px;
-        cursor: pointer;
-        transition: .3s all;
-
-        .icon{
-            width: 60%;
-            color: var(--blue);
-            transition: .3s all;
-        }
-
-        &:hover{
-            background: linear-gradient(76deg, var(--green), var(--blue));
-
-            .icon{
-                color: var(--white);
-            }
-        }
-    }
-
     .areaModal{
         background-color: var(--white);
         padding: 50px;
         border-radius: 10px;
         border-radius: 0 10% 0 10%;
+        position: relative;
+
+        .closeModal{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+    
+            .icon{
+                color: var(--blue);
+                transition: .3s all;
+                font-size: 18px;
+            }
+        }
 
         .title{
             font-size: 34px;
