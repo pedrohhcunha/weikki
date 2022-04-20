@@ -6,9 +6,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import Footer from '../components/Footer/componente'
 import Header from '../components/Header/componente'
+import Modal from '../components/Modal/componente'
 import Head from 'next/head'
 
 export default function TrabalheConosco(props){
+
+    const [modalIsActive, setModalIsActive] = useState(false);
 
     const [stateModalVaga, setStateModalVaga] = useState(0);
 
@@ -76,7 +79,7 @@ export default function TrabalheConosco(props){
         <Head>
             <title>Trabalhe Conosco - Weikki</title>
         </Head>
-        <Header />
+        <Header openModal={() => setModalIsActive(true)} />
             <main className={styles.main}>
                 <h2>Trabalhe Conosco</h2>
                 <div className={styles.vagas}>
@@ -137,6 +140,7 @@ export default function TrabalheConosco(props){
                     </aside>
                 : null}
             </main>
+            <Modal isActive={modalIsActive} closeModal={() => setModalIsActive(false)}/>
             <Footer />
         </>
     )
