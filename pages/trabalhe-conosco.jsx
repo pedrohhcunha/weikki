@@ -25,6 +25,8 @@ export default function TrabalheConosco(props){
         message: '',
     });
 
+    const [modalInHover, setModalInHover] = useState(false);
+
     const sendForm = event => {
         event.preventDefault()
         
@@ -102,7 +104,11 @@ export default function TrabalheConosco(props){
                     }
                 </div>
                 {vagasSepti.length >= 1 ?
-                    <aside className={`${styles.modalVaga} ${stateModalVaga ? styles.active : null}`}>
+                    <aside className={`${styles.modalVaga} ${stateModalVaga ? styles.active : null}`} onClick={() => {
+                        if(!modalInHover){
+                            setModalInHover(false)
+                        }
+                    }}>
                         <form id="FormVaga" onSubmit={sendForm} className={styles.modal}>
                             <div className={styles.topArea}>
                                 <h2 className={styles.titleArea}>{vagasSepti.find(vaga => vaga.id === vagaAtual)?.titulo}</h2>

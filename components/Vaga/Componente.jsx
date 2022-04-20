@@ -11,7 +11,6 @@ import styles from './styles.module.scss'
 import Button from '../Button/componente'
 import DropDiv from '../DropDiv/componente'
 import Image from 'next/image'
-
 //Criando e exportando o componente
 export default function Vaga(props) {
 
